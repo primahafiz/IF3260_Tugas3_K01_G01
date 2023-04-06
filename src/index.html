@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Web Based CAD</title>
+</head>
+
+<link rel="stylesheet" href="./styles/main.css">
+
+<body>
+    <div class="title">
+        <h1>3D Web Based CAD</h1>
+    </div>
+    <div class="gui">
+        <div class="toolbar left-div">
+            <div style="margin-top: 10px;">
+                <label>Object</label>
+                <select id="objectlist" name="objectlist" onchange="updateObjectChosen()">
+                    <!-- <option value="0" selected>TriplePrism</option> -->
+                    <!-- <option value="1">Boxed Box</option> -->
+                    <option value="2">Triangle Prism</option>
+                </select>
+            </div>
+            </br>
+            <b>Set object angle</b>
+            <div>
+                <label>Angle X</label>
+                <input type="range" name="sliderRotationX" id="sliderRotationX" min="-180" max="180" value="0" oninput="updateRotation('x',this.value)">
+                <output id="outputRotationX"></output>
+            </div>
+            <div>
+                <label>Angle Y</label>
+                <input type="range" name="sliderRotationY" id="sliderRotationY" min="-180" max="180" value="0" oninput="updateRotation('y',this.value)">
+                <output id="outputRotationY"></output>
+            </div>
+            <div>
+                <label>Angle Z</label>
+                <input type="range" name="sliderRotationZ" id="sliderRotationZ" min="-180" max="180" value="0" oninput="updateRotation('z',this.value)">
+                <output id="outputRotationZ"></output>
+            </div>
+            </br>
+            <b>Translation</b>
+            <div>
+                <label>X</label>
+                <input type="range" name="sliderTranslationX" id="sliderTranslationX" min="-100" max="100" value="0" oninput="updateTranslation('x',this.value)">
+                <output id="outputTranslationX"></output>
+            </div>
+            <div>
+                <label>Y</label>
+                <input type="range" name="sliderTranslationY" id="sliderTranslationY" min="-100" max="100" value="0" oninput="updateTranslation('y',this.value)">
+                <output id="outputTranslationY"></output>
+            </div>
+            <div>
+                <label>Z</label>
+                <input type="range" name="sliderTranslationZ" id="sliderTranslationZ" min="-100" max="100" value="0" oninput="updateTranslation('z',this.value)">
+                <output id="outputTranslationZ"></output>
+            </div>
+            </br>
+            <b>Scaling</b>
+            <div>
+                <label>Sx</label>
+                <input type="range" name="sliderScalingX" id="sliderScalingX" min="0" max="1000" value="500" oninput="updateScaling('x',this.value)">
+                <output id="outputSx"></output>
+            </div>
+            <div>
+                <label>Sy</label>
+                <input type="range" name="sliderScalingY" id="sliderScalingY" min="0" max="1000" value="500" oninput="updateScaling('y',this.value)">
+                <output id="outputSy"></output>
+            </div>
+            <div>
+                <label>Sz</label>
+                <input type="range" name="sliderScalingZ" id="sliderScalingZ" min="0" max="1000" value="500" oninput="updateScaling('z',this.value)">
+                <output id="outputSz"></output>
+            </div>
+            <br>
+            <b>Set camera</b>
+            <div>
+                <label>Angle</label>
+                <input type="range" name="sliderRotationX" id="sliderRotationCamera" min="-180" max="180" value="0">
+                <output id="outputRotationCamera"></output>
+            </div>
+            <div>
+                <label>Zoom</label>
+                <input type="range" name="sliderRotationX" id="sliderZoomCamera" min="0" max="100" value="0">
+                <output id="outputZoomCamera"></output>
+            </div>
+            </br>
+            <b>Shading</b>
+            <div>
+                <input type="checkbox" name="isShading" id="isShading" checked>
+                <label>Use shading</label>
+            </div>
+            </br>
+            <b>Projection</b>
+            <div>
+                <select id="projection_selector" name="projection_selector" onchange="updateProjectionChosen()">
+                    <option value="0" selected>Orthogonal</option>
+                    <option value="1" >Oblique</option>
+                    <option value="2" >Perspective</option>
+                </select>
+            </div>
+            </br>
+            <b>Others</b>
+            <div>
+                <button onclick="openModal('modal-1')">Help</button>
+                <button id="resetBtn">Reset</button>
+                <button id="saveBtn">Save</button>
+                <button id="loadBtn">Load</button>
+                <input type="file" id="inputFile" accept=".json">
+            </div>
+        </div>
+        <div class="canvas center-div">
+            <canvas id="canvas" width="600px" height="600px">
+            </canvas>
+        </div>
+        <div class="right-div">
+            <!--
+                    mungkin nanti ada di sisi kanan jg, gtw
+                    butuh ditambahin class toolbar nanti klo emg jadi
+                -->
+        </div>
+    </div>
+    <!-- modal for help -->
+    <!-- Reference: https://jasonwatmore.com/post/2023/01/04/vanilla-js-css-modal-popup-dialog-tutorial-with-example -->
+    <div>
+        <div id="modal-1" class="jw-modal">
+            <div class="jw-modal-body">
+                <h1>Help</h1>
+                <p>
+                    1. Website ini dibuat dengan menggunakan WebGL Murni.
+                    <br>
+                    2. Terdapat 3 buah model objek berongga (hollow objects).
+                    <br>
+                    3. Koordinat dan warna untuk setiap objek dapat disimpan ke dalam suatu file dengan menekan tombol
+                    "Save".
+                    <br>
+                    4. Model yang telah disimpan dapat dibuka dengan menekan tombol "Choose File" untuk memilih file
+                    json terkait kemudian menekan tombol "Load".
+                    <br>
+                    5. Terdapat berbaga interaksi untuk view model. Berikut merupakan detail dari setiap interaksi yang
+                    dapat dilakukan beserta caranya.
+                    <br>
+                    &emsp; a. Jenis proyeksi untuk menampilkan semua objek dapat diubah dengan memilih jenis
+                    "Projection",
+                    apakah orthographic, oblique, atau perspective.
+                    <br>
+                    &emsp; b. Dapat dilakukan rotasi untuk setiap objek dengan cara mengatur derajat rotasi untuk setiap
+                    sumbu
+                    (Angle X, Angle Y, Angle Z) pada bagian "Set object angle".
+                    <br>
+                    &emsp; c. Dapat dilakukan translasi untuk setiap objek dengan cara mengatur besar perpindahan di
+                    setiap
+                    sumbu
+                    (X, Y, Z) pada bagian "Translation".
+                    <br>
+                    &emsp; d. Dapat dilakukan scaling untuk setiap objek dengan cara mengatur besar perubahan ukuran di
+                    setiap
+                    sumbu
+                    (Sx, Sy, Sz) pada bagian "Scaling".
+                    <br>
+                    &emsp; e. Dapat dilakukan pengubahan jarak (radius) kamera view untuk mendekat atau menjauh dari
+                    model
+                    dengan mengatur besaran zoom pada "Set Camera".
+                    <br>
+                    &emsp; f. Dapat dilakukan pengitaran objek-objek oleh kamera view dengan mengatur "Angle" pada "Set
+                    Camera".
+                    <br>
+                    &emsp; g. Dapat dilakukan reset view ke default untuk mengembalikan model pada kondsi awal.
+                    <br>
+                    6. Shading dapat di-ON atau di-OFF kan pada saat penggambaran model dengan mencentang bagian
+                    "useShading".
+                </p>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<!-- Script -->
+<script src="./scripts/init.js"></script>
+<script src="./scripts/utils.js"></script>
+<script src="./scripts/shape.js"></script>
+<script src="./scripts/model.js"></script>
+<script src="./scripts/modelTubes2.js"></script>
+<script src="./scripts/projection.js"></script>
+<script src="./scripts/interaction.js"></script>
+
+</html>
