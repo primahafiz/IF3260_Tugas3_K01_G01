@@ -183,11 +183,11 @@ function initShapes(){
     // boxedBoxShape.setId(1);
     // boxedBoxShape.baseTranslateX = 0.7
     // shapes[boxedBoxShape.id] = boxedBoxShape
-    trianglePrismShape = new Shape(trianglePrism, normalTrianglePrism, [0.2, 1, 0.2], gl.TRIANGLE_FAN)
-    trianglePrismShape.setId(0);
-    // triplePrismShape.baseTranslateX = -0.7
-    shapes[trianglePrismShape.id] = trianglePrismShape;
-    changeToOrtho()
+    // trianglePrismShape = new Shape(trianglePrism, normalTrianglePrism, [0.2, 1, 0.2], gl.TRIANGLE_FAN)
+    // trianglePrismShape.setId(0);
+    // // triplePrismShape.baseTranslateX = -0.7
+    // shapes[trianglePrismShape.id] = trianglePrismShape;
+    // changeToOrtho()
     redraw()
 }
 

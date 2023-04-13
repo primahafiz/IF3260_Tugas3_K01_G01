@@ -63,26 +63,34 @@ function getRotationZMatrix(x) {
     return mat
 }
 
-function getCenterPoint(vertices) {
+function getCenterPoint(vertices,transformationMatrix) {
+    let transformedVertices = []
+    for (let i = 0; i < vertices.length; i += 12) {
+        for (let j = 0; j < 12; j += 3) {
+            let newVertex = [[vertices[i + j]], [vertices[i + j + 1]], [vertices[i + j + 2]], [1]]
+            let retMat = multiplyMatrix(transformationMatrix, newVertex)
+
+            transformedVertices.push(retMat[0][0], retMat[1][0], retMat[2][0])
+        }
+    }
     let ret = [0, 0, 0]
     let mnm = [1, 1, 1]
     let mxm = [-1, -1, -1]
-    for (let i = 0; i < vertices.length; i++) {
+    for (let i = 0; i < transformedVertices.length; i++) {
         if (i % 3 == 0) {
-            mnm[0] = min(mnm[0], vertices[i])
-            mxm[0] = max(mxm[0], vertices[i])
+            mnm[0] = min(mnm[0], transformedVertices[i])
+            mxm[0] = max(mxm[0], transformedVertices[i])
         } else if (i % 3 == 1) {
-            mnm[1] = min(mnm[1], vertices[i])
-            mxm[1] = max(mxm[1], vertices[i])
+            mnm[1] = min(mnm[1], transformedVertices[i])
+            mxm[1] = max(mxm[1], transformedVertices[i])
         } else {
-            mnm[2] = min(mnm[2], vertices[i])
-            mxm[2] = max(mxm[2], vertices[i])
+            mnm[2] = min(mnm[2], transformedVertices[i])
+            mxm[2] = max(mxm[2], transformedVertices[i])
         }
     }
     for (let i = 0; i < 3; i++) {
         ret[i] = (mnm[i] + mxm[i]) / 2
     }
-    // console.log(ret);
     return ret
 }
 

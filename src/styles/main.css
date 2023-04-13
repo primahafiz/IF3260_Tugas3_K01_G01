@@ -23,7 +23,7 @@ body {
 }
 
 .center-div {
-    align-self: center;
+    align-self: l;
 }
 
 .right-div {
@@ -52,11 +52,23 @@ body {
 .canvas>canvas {
     border: 2px solid black;
     background-color: white;
+}
+
+#canvasAll{
     border-radius: 10px;
     min-width: 500px;
     min-height: 500px;
-    height: 35vw;
-    width: 35vw;
+    height: 30vw;
+    width: 30vw;
+    margin-left: -17vw;
+}
+
+#canvasSingle{
+    border-radius: 10px;
+    min-width: 500px;
+    min-height: 500px;
+    height: 25vw;
+    width: 25vw;
 }
 
 /* MODAL STYLES

@@ -1,7 +1,7 @@
 class Shape {
     static ID = 0
 
-    constructor(vertices, normal, color, webGLShape) {
+    constructor(vertices, normal, color, webGLShape, parentTransformationMatrix) {
         this.id = Shape.ID++
         this.webGLShape = webGLShape
         this.vertices = vertices
@@ -10,8 +10,15 @@ class Shape {
         this.transformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         this.projection_matrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 
-        this.listChildShape = []
+        this.toInheritTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.toInheritTransformationMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        this.singleTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         
+
         // Transformation variable which will be passed to child shape
         this.curAngleX = 0
         this.curAngleY = 0
@@ -86,23 +93,84 @@ class Shape {
         }
     }
 
+    rotateSingle(type,angle) {
+        if(type == 'x'){
+            this.curAngleXSingle = angle
+        }else if(type == 'y'){
+            this.curAngleYSingle = angle
+        }else if(type == 'z'){
+            this.curAngleZSingle = angle
+        }
+    }
+
+    translateSingle(type,displacement) {
+        if(type == 'x'){
+            this.translateXSingle = displacement
+        }else if(type == 'y'){
+            this.translateYSingle = displacement
+        }else if(type == 'z'){
+            this.translateZSingle = displacement
+        }
+    }
+
+    scaleSingle(type,ratio) {
+        if(type == 'x'){
+            this.scaleXSingle = ratio
+        }else if(type == 'y'){
+            this.scaleYSingle = ratio
+        }else if(type == 'z'){
+            this.scaleZSingle = ratio
+        }
+    }
+
+    getSingleTransformationMatrix(currentTransformationMatrix){
+        let center = getCenterPoint(this.vertices,currentTransformationMatrix);
+        let singleTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
+
+        // Scaling
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getScalingMatrix(this.scaleXSingle, this.scaleYSingle, this.scaleZSingle))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
+        // Rotation
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getRotationZMatrix(this.curAngleZSingle))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getRotationYMatrix(this.curAngleYSingle))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getRotationXMatrix(this.curAngleXSingle))
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
+        // Translation
+        singleTransformationMatrix = multiplyMatrix(singleTransformationMatrix, getTranslationMatrix(this.translateXSingle, this.translateYSingle, this.translateZSingle))
+
+        return singleTransformationMatrix
+    }
+
+    getToInheritTransformationMatrix(){
+        let center = getCenterPoint(this.vertices,this.toInheritTransformationMatrix);
+        let newToInheritTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
+
+        // Scaling
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getScalingMatrix(this.scaleX, this.scaleY, this.scaleZ))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
+        // Rotation
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getRotationZMatrix(this.curAngleZ))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getRotationYMatrix(this.curAngleY))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getRotationXMatrix(this.curAngleX))
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
+        // Translation
+        newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getTranslationMatrix(this.translateX, this.translateY, this.translateZ))
+
+        return newToInheritTransformationMatrix
+    }
+
     getTransformedMatrix() {
         let transformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
-        console.log(this.scaleX,this.scaleY,this.scaleZ)
-        let center = getCenterPoint(this.vertices)
-        // Scaling
-        transformationMatrix = multiplyMatrix(transformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
-        transformationMatrix = multiplyMatrix(transformationMatrix, getScalingMatrix(this.scaleX, this.scaleY, this.scaleZ))
-        transformationMatrix = multiplyMatrix(transformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
-        // Rotation
-        transformationMatrix = multiplyMatrix(transformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
-        transformationMatrix = multiplyMatrix(transformationMatrix, getRotationZMatrix(this.curAngleZ))
-        transformationMatrix = multiplyMatrix(transformationMatrix, getRotationYMatrix(this.curAngleY))
-        transformationMatrix = multiplyMatrix(transformationMatrix, getRotationXMatrix(this.curAngleX))
-        transformationMatrix = multiplyMatrix(transformationMatrix,getTranslationMatrix(center[0],center[1],center[2]))
-        // Translation
-        transformationMatrix = multiplyMatrix(transformationMatrix, getTranslationMatrix(this.translateX, this.translateY, this.translateZ))
-
+        
+        // to inherit transformation
+        transformationMatrix = multiplyMatrix(transformationMatrix,this.getToInheritTransformationMatrix())
+        // single transformation
+        transformationMatrix = multiplyMatrix(transformationMatrix,this.getSingleTransformationMatrix())
+        
         return transformationMatrix
     }
 

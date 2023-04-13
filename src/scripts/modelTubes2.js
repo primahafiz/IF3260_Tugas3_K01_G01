@@ -309,9 +309,9 @@ for (var i = 0; i < baseBoxNormals.length * 2; i++) {
     boxedBoxNormals.push(baseBoxNormals[i % baseBoxNormals.length])
 }
 
-let centerboxedBoxVertices = getCenterPoint(boxedBoxVertices)
-for (let i = 0; i < boxedBoxVertices.length; i += 3) {
-    boxedBoxVertices[i] -= centerboxedBoxVertices[0]
-    boxedBoxVertices[i + 1] -= centerboxedBoxVertices[1]
-    boxedBoxVertices[i + 2] -= centerboxedBoxVertices[2]
-}
+// let centerboxedBoxVertices = getCenterPoint(boxedBoxVertices)
+// for (let i = 0; i < boxedBoxVertices.length; i += 3) {
+//     boxedBoxVertices[i] -= centerboxedBoxVertices[0]
+//     boxedBoxVertices[i + 1] -= centerboxedBoxVertices[1]
+//     boxedBoxVertices[i + 2] -= centerboxedBoxVertices[2]
+// }
