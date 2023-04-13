@@ -1,6 +1,7 @@
 var choosenShapeID = 0
 shapes = {}
 var lastViewAngle = 0
+var identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 var viewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 var currentRadius = 0.3;
 var labelTranslationX =  document.getElementById('outputTranslationX')
@@ -15,7 +16,7 @@ var labelRotationZ =  document.getElementById('outputRotationZ')
 
 function redraw() {
     for (let id in shapes) {
-        shapes[id].materialize()
+        shapes[id].draw(identityMatrix)
     }
 }
 
@@ -173,9 +174,31 @@ window.addEventListener('load', function () {
     });
 });
 
+function initAduduShape(){
+    let bodyShape = new Shape(aduduModel['body']['vertices'],aduduModel['body']['normal'],aduduModel['body']['color'],gl.TRIANGLE_FAN)
+    let headShape = new Shape(aduduModel['head']['vertices'],aduduModel['head']['normal'],aduduModel['head']['color'],gl.TRIANGLE_FAN)
+    let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'],aduduModel['torsoLeft']['normal'],aduduModel['torsoLeft']['color'],gl.TRIANGLE_FAN)
+    let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'],aduduModel['torsoRight']['normal'],aduduModel['torsoRight']['color'],gl.TRIANGLE_FAN)
+    let footLeftShape = new Shape(aduduModel['footLeft']['vertices'],aduduModel['footLeft']['normal'],aduduModel['footLeft']['color'],gl.TRIANGLE_FAN)
+    let footRightShape = new Shape(aduduModel['footRight']['vertices'],aduduModel['footRight']['normal'],aduduModel['footRight']['color'],gl.TRIANGLE_FAN)
+    let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'],aduduModel['antennaLeft']['normal'],aduduModel['antennaLeft']['color'],gl.TRIANGLE_FAN)
+    let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'],aduduModel['antennaRight']['normal'],aduduModel['antennaRight']['color'],gl.TRIANGLE_FAN)
+
+    bodyShape.addChild(headShape)
+    bodyShape.addChild(torsoLeftShape)
+    bodyShape.addChild(torsoRightShape)
+    bodyShape.addChild(footLeftShape)
+    bodyShape.addChild(footRightShape)
+    headShape.addChild(antennaLeftShape)
+    headShape.addChild(antennaRightShape)
+
+    shapes[bodyShape.id] = bodyShape
+}
+
 // Dummy data
 function initShapes(){
     shapes = {}
+    initAduduShape();
     // triplePrismShape = new Shape(triplePrism, normalTriplePrism, [0.2, 1, 0.2], gl.TRIANGLE_FAN)
     // triplePrismShape.setId(0);
     // shapes[triplePrismShape.id] = triplePrismShape

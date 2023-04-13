@@ -1,7 +1,7 @@
 class Shape {
     static ID = 0
 
-    constructor(vertices, normal, color, webGLShape, parentTransformationMatrix) {
+    constructor(vertices, normal, color, webGLShape) {
         this.id = Shape.ID++
         this.webGLShape = webGLShape
         this.vertices = vertices
@@ -10,12 +10,10 @@ class Shape {
         this.transformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         this.projection_matrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 
+        this.parentMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+
         this.toInheritTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-        for(let i=0;i<4;i++){
-            for(let j=0;j<4;j++){
-                this.toInheritTransformationMatrix[i][j] = parentTransformationMatrix[i][j]
-            }
-        }
+        
         this.singleTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
         
 
@@ -40,12 +38,33 @@ class Shape {
         this.scaleXSingle = 1
         this.scaleYSingle = 1
         this.scaleZSingle = 1
+
+        this.childShape = []
+    }
+    
+    addChild(shape){
+        this.childShape.push(shape);
+    }
+
+    draw(parentTransformationMatrix){
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        console.log("DRAW")
+        this.materialize()
+        console.log("CHILD = "+this.childShape.length)
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].draw(this.toInheritTransformationMatrix)
+        }
     }
 
     materialize() {
         let vertices = this.vertices
         let normal = this.getTransformedNormal()
         this.transformationMatrix = this.getTransformedMatrix()
+        this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
         gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(this.projection_matrix));
         gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(this.transformationMatrix));
         gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(viewMatrix))
@@ -143,9 +162,15 @@ class Shape {
         return singleTransformationMatrix
     }
 
-    getToInheritTransformationMatrix(){
-        let center = getCenterPoint(this.vertices,this.toInheritTransformationMatrix);
+    getToInheritTransformationMatrix(currentTransformationMatrix){
+        let center = getCenterPoint(this.vertices,currentTransformationMatrix);
         let newToInheritTransformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
+
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                newToInheritTransformationMatrix[i][j] = this.parentMatrix[i][j]
+            }
+        }
 
         // Scaling
         newToInheritTransformationMatrix = multiplyMatrix(newToInheritTransformationMatrix, getTranslationMatrix(-center[0],-center[1],-center[2]))
@@ -167,9 +192,9 @@ class Shape {
         let transformationMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]];
         
         // to inherit transformation
-        transformationMatrix = multiplyMatrix(transformationMatrix,this.getToInheritTransformationMatrix())
+        transformationMatrix = multiplyMatrix(transformationMatrix,this.getToInheritTransformationMatrix(this.parentMatrix))
         // single transformation
-        transformationMatrix = multiplyMatrix(transformationMatrix,this.getSingleTransformationMatrix())
+        transformationMatrix = multiplyMatrix(transformationMatrix,this.getSingleTransformationMatrix(transformationMatrix))
         
         return transformationMatrix
     }

@@ -1,5 +1,5 @@
 //Variable Declaration and Initialization 
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("canvasAll");
 var gl = canvas.getContext("webgl2");
 var vertexShader = gl.createShader(gl.VERTEX_SHADER);
 var fragmentShader = gl.createShader(gl.FRAGMENT_SHADER);
