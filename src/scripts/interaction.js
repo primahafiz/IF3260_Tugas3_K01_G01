@@ -14,10 +14,11 @@ var labelRotationX =  document.getElementById('outputRotationX')
 var labelRotationY =  document.getElementById('outputRotationY')
 var labelRotationZ =  document.getElementById('outputRotationZ')
 
+// ROOT SHAPE ID
+var aduduShapeId;
+
 function redraw() {
-    for (let id in shapes) {
-        shapes[id].draw(identityMatrix)
-    }
+    shapes[aduduShapeId].draw(identityMatrix)
 }
 
 function updateTranslation(type,displacement){
@@ -52,6 +53,11 @@ function updateScalingSingle(type,ratio){
 function updateRotationSingle(type,angle){
     shapes[choosenShapeID].rotateSingle(type,angle)
     redraw()
+}
+
+function updateChoosenShape(id){
+    console.log(id)
+    choosenShapeID = id
 }
 
 var sliderCamera = document.getElementById("sliderRotationCamera")
@@ -192,14 +198,16 @@ window.addEventListener('load', function () {
 });
 
 function initAduduShape(){
-    let bodyShape = new Shape(aduduModel['body']['vertices'],aduduModel['body']['normal'],aduduModel['body']['color'],gl.TRIANGLE_FAN)
-    let headShape = new Shape(aduduModel['head']['vertices'],aduduModel['head']['normal'],aduduModel['head']['color'],gl.TRIANGLE_FAN)
-    let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'],aduduModel['torsoLeft']['normal'],aduduModel['torsoLeft']['color'],gl.TRIANGLE_FAN)
-    let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'],aduduModel['torsoRight']['normal'],aduduModel['torsoRight']['color'],gl.TRIANGLE_FAN)
-    let footLeftShape = new Shape(aduduModel['footLeft']['vertices'],aduduModel['footLeft']['normal'],aduduModel['footLeft']['color'],gl.TRIANGLE_FAN)
-    let footRightShape = new Shape(aduduModel['footRight']['vertices'],aduduModel['footRight']['normal'],aduduModel['footRight']['color'],gl.TRIANGLE_FAN)
-    let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'],aduduModel['antennaLeft']['normal'],aduduModel['antennaLeft']['color'],gl.TRIANGLE_FAN)
-    let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'],aduduModel['antennaRight']['normal'],aduduModel['antennaRight']['color'],gl.TRIANGLE_FAN)
+    let bodyShape = new Shape(aduduModel['body']['vertices'],aduduModel['body']['normal'],aduduModel['body']['color'],gl.TRIANGLE_FAN,'body')
+    let headShape = new Shape(aduduModel['head']['vertices'],aduduModel['head']['normal'],aduduModel['head']['color'],gl.TRIANGLE_FAN,'head')
+    let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'],aduduModel['torsoLeft']['normal'],aduduModel['torsoLeft']['color'],gl.TRIANGLE_FAN,'torsoLeft')
+    let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'],aduduModel['torsoRight']['normal'],aduduModel['torsoRight']['color'],gl.TRIANGLE_FAN,'torsoRight')
+    let footLeftShape = new Shape(aduduModel['footLeft']['vertices'],aduduModel['footLeft']['normal'],aduduModel['footLeft']['color'],gl.TRIANGLE_FAN,'footLeft')
+    let footRightShape = new Shape(aduduModel['footRight']['vertices'],aduduModel['footRight']['normal'],aduduModel['footRight']['color'],gl.TRIANGLE_FAN,'footRight')
+    let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'],aduduModel['antennaLeft']['normal'],aduduModel['antennaLeft']['color'],gl.TRIANGLE_FAN,'antennaLeft')
+    let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'],aduduModel['antennaRight']['normal'],aduduModel['antennaRight']['color'],gl.TRIANGLE_FAN,'antennaRight')
+
+    aduduShapeId = bodyShape.id
 
     bodyShape.addChild(headShape)
     bodyShape.addChild(torsoLeftShape)
@@ -210,12 +218,27 @@ function initAduduShape(){
     headShape.addChild(antennaRightShape)
 
     shapes[bodyShape.id] = bodyShape
+    shapes[headShape.id] = headShape
+    shapes[torsoLeftShape.id] = torsoLeftShape
+    shapes[torsoRightShape.id] = torsoRightShape
+    shapes[footLeftShape.id] = footLeftShape
+    shapes[footRightShape.id] = footRightShape
+    shapes[antennaLeftShape.id] = antennaLeftShape
+    shapes[antennaRightShape.id] = antennaRightShape
+}
+
+function changeHierarchy(rootShapeId){
+    let hierarchy = []
+    shapes[rootShapeId].getHierarchy(0,hierarchy)
+
+    renderHierarchy(hierarchy)
 }
 
 // Dummy data
 function initShapes(){
     shapes = {}
-    initAduduShape();
+    initAduduShape()
+    changeHierarchy(aduduShapeId)
     // triplePrismShape = new Shape(triplePrism, normalTriplePrism, [0.2, 1, 0.2], gl.TRIANGLE_FAN)
     // triplePrismShape.setId(0);
     // shapes[triplePrismShape.id] = triplePrismShape

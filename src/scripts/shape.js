@@ -1,9 +1,10 @@
 class Shape {
     static ID = 0
 
-    constructor(vertices, normal, color, webGLShape) {
+    constructor(vertices, normal, color, webGLShape, nameShape) {
         this.id = Shape.ID++
         this.webGLShape = webGLShape
+        this.nameShape = nameShape
         this.vertices = vertices
         this.normal = normal;
         this.color = color
@@ -87,6 +88,13 @@ class Shape {
             this.curAngleY = angle
         }else if(type == 'z'){
             this.curAngleZ = angle
+        }
+    }
+
+    getHierarchy(currentDepth,res){
+        res.push([currentDepth,this.id,this.nameShape])
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].getHierarchy(currentDepth+1,res)
         }
     }
 

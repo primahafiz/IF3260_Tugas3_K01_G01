@@ -358,3 +358,19 @@ function resetObjectLabels(){
     sliderScalingY.value = 500
     sliderScalingZ.value = 500
 }
+
+function renderHierarchy(hierarchy){
+    let doc = document.getElementById('hierarchy')
+    let ans = ""
+    for(let i=0;i<hierarchy.length;i++){
+        ans += '<div><span>'
+        for(let j=0;j<3*hierarchy[i][0];j++){
+            ans += '&nbsp;'
+        }
+        ans += '<button '
+        ans += 'onclick=' + 'updateChoosenShape(' + hierarchy[i][1] + ')>'
+        ans+=hierarchy[i][2]
+        ans += '</button></span></div>'
+    }
+    doc.innerHTML = ans
+}
