@@ -52,9 +52,7 @@ class Shape {
                 this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
             }
         }
-        console.log("DRAW")
         this.materialize()
-        console.log("CHILD = "+this.childShape.length)
         for(let i=0;i<this.childShape.length;i++){
             this.childShape[i].draw(this.toInheritTransformationMatrix)
         }

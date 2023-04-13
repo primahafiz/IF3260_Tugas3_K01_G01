@@ -37,6 +37,23 @@ function updateRotation(type,angle){
     redraw()
 }
 
+function updateTranslationSingle(type,displacement){
+    displacement /= 100;
+    shapes[choosenShapeID].translateSingle(type,displacement)
+    redraw()
+}
+
+function updateScalingSingle(type,ratio){
+    ratio /= 500
+    shapes[choosenShapeID].scaleSingle(type,ratio)
+    redraw()
+}
+
+function updateRotationSingle(type,angle){
+    shapes[choosenShapeID].rotateSingle(type,angle)
+    redraw()
+}
+
 var sliderCamera = document.getElementById("sliderRotationCamera")
 var sliderZoom = document.getElementById("sliderZoomCamera")
 var labelRotationCamera = document.getElementById('outputRotationCamera')
