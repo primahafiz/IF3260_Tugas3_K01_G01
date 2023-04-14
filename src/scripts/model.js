@@ -17,7 +17,7 @@ const aduduModel = {
             -bW,-bH,bW,  -bW,-bH,-bW,  -bW,bH,-bW,  -bW,bH,bW,
             bW,-bH,-bW,  bW,-bH,bW,  bW,bH,bW,  bW,bH,-bW,
             -bW,-bH,-bW,  bW,-bH,-bW,  bW,bH,-bW,  -bW,bH,-bW,
-            bW,-bH,-bW,  -bW,-bH,-bW,  -bW,bH,-bW,  bW,bH,-bW
+            bW,-bH,bW,  -bW,-bH,bW,  -bW,bH,bW,  bW,bH,bW
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -36,7 +36,7 @@ const aduduModel = {
             -hW,bH,hW,  -hW,bH,-hW,  -hW,bH+hL,-hW,  -hW,bH+hL,hW,
             hW,bH,-hW,  hW,bH,hW,  hW,bH+hL,hW,  hW,bH+hL,-hW,
             -hW,bH,-hW,  hW,bH,-hW,  hW,bH+hL,-hW,  -hW,bH+hL,-hW,
-            hW,bH,-hW,  -hW,bH,-hW,  -hW,bH+hL,-hW,  hW,bH+hL,-hW
+            hW,bH,hW,  -hW,bH,hW,  -hW,bH+hL,hW,  hW,bH+hL,hW
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -55,7 +55,7 @@ const aduduModel = {
             -bW-tW,-bH,tD,  -bW-tW,-bH,-tD,  -bW-tW,bH,-tD,  -bW-tW,bH,tD,
             -bW,-bH,-tD,  -bW,-bH,tD,  -bW,bH,tD,  -bW,bH,-tD,
             -bW-tW,-bH,-tD,  -bW,-bH,-tD,  -bW,bH,-tD,  -bW-tW,bH,-tD,
-            -bW,-bH,-tD,  -bW-tW,-bH,-tD,  -bW-tW,bH,-tD,  -bW,bH,-tD
+            -bW,-bH,tD,  -bW-tW,-bH,tD,  -bW-tW,bH,tD,  -bW,bH,tD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -74,7 +74,7 @@ const aduduModel = {
             bW,-bH,tD,  bW,-bH,-tD,  bW,bH,-tD,  bW,bH,tD,
             bW+tW,-bH,-tD,  bW+tW,-bH,tD,  bW+tW,bH,tD,  bW+tW,bH,-tD,
             bW,-bH,-tD,  bW+tW,-bH,-tD,  bW+tW,bH,-tD,  bW,bH,-tD,
-            bW+tW,-bH,-tD,  bW,-bH,-tD,  bW,bH,-tD,  bW+tW,bH,-tD
+            bW+tW,-bH,tD,  bW,-bH,tD,  bW,bH,tD,  bW+tW,bH,tD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -93,7 +93,7 @@ const aduduModel = {
             -0.8*bW/2-tW,-bH-tL,tD,  -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2-tW,-bH,-tD,  -0.8*bW/2-tW,-bH,tD,
             -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2,-bH-tL,tD,  -0.8*bW/2,-bH,tD,  -0.8*bW/2,-bH,-tD,
             -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2,-bH,-tD,  -0.8*bW/2-tW,-bH,-tD,
-            -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2-tW,-bH,-tD,  -0.8*bW/2,-bH,-tD
+            -0.8*bW/2,-bH-tL,tD,  -0.8*bW/2-tW,-bH-tL,tD,  -0.8*bW/2-tW,-bH,tD,  -0.8*bW/2,-bH,tD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -112,7 +112,7 @@ const aduduModel = {
             0.8*bW/2,-bH-tL,tD,  0.8*bW/2,-bH-tL,-tD,  0.8*bW/2,-bH,-tD,  0.8*bW/2,-bH,tD,
             0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2+tW,-bH-tL,tD,  0.8*bW/2+tW,-bH,tD,  0.8*bW/2+tW,-bH,-tD,
             0.8*bW/2,-bH-tL,-tD,  0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2+tW,-bH,-tD,  0.8*bW/2,-bH,-tD,
-            0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2,-bH-tL,-tD,  0.8*bW/2,-bH,-tD,  0.8*bW/2+tW,-bH,-tD
+            0.8*bW/2+tW,-bH-tL,tD,  0.8*bW/2,-bH-tL,tD,  0.8*bW/2,-bH,tD,  0.8*bW/2+tW,-bH,tD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -131,7 +131,7 @@ const aduduModel = {
             -0.7*hW/2,bH+hL,aD,  -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2,bH+hL+aL,-aD,  -0.7*hW/2,bH+hL+aL,aD,
             -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL,aD,  -0.7*hW/2-aW,bH+hL+aL,aD,  -0.7*hW/2-aW,bH+hL+aL,-aD,
             -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL+aL,-aD,  -0.7*hW/2,bH+hL+aL,-aD,
-            -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2,bH+hL+aL,-aD,  -0.7*hW/2-aW,bH+hL+aL,-aD
+            -0.7*hW/2-aW,bH+hL,aD,  -0.7*hW/2,bH+hL,aD,  -0.7*hW/2,bH+hL+aL,aD,  -0.7*hW/2-aW,bH+hL+aL,aD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -150,7 +150,7 @@ const aduduModel = {
             0.7*hW/2,bH+hL,aD,  0.7*hW/2,bH+hL,-aD,  0.7*hW/2,bH+hL+aL,-aD,  0.7*hW/2,bH+hL+aL,aD,
             0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2+aW,bH+hL,aD,  0.7*hW/2+aW,bH+hL+aL,aD,  0.7*hW/2+aW,bH+hL+aL,-aD,
             0.7*hW/2,bH+hL,-aD,  0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2+aW,bH+hL+aL,-aD,  0.7*hW/2,bH+hL+aL,-aD,
-            0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2,bH+hL,-aD,  0.7*hW/2,bH+hL+aL,-aD,  0.7*hW/2+aW,bH+hL+aL,-aD
+            0.7*hW/2+aW,bH+hL,aD,  0.7*hW/2,bH+hL,aD,  0.7*hW/2,bH+hL+aL,aD,  0.7*hW/2+aW,bH+hL+aL,aD
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,

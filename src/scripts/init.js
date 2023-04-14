@@ -31,8 +31,6 @@ function init() {
     // Clear the canvas AND the depth buffer.
     gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
 
-    
-
     //Create Shadder
     const shadderSource = {
         vertexShaderSource: `#version 300 es
