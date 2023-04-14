@@ -226,7 +226,7 @@ class Shape {
     }
     getTransformedNormal() {
         let normal = []
-        let transformationMatrix = this.getTransformedMatrix()
+        let transformationMatrix = this.getTransformedMatrixNonWebgl()
         let invTransposeMat = transpose(inverse(transformationMatrix))
 
         for (let i = 0; i < this.normal.length; i += 12) {

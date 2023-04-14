@@ -60,7 +60,7 @@ function init() {
         void main() {
             outColor = fragColor;
             
-            vec3 vReverseLightDir = vec3(0.0,0.0,1.0);
+            vec3 vReverseLightDir = vec3(0.0,0.0,-1.0);
             float ratio = 0.5 * max(dot(vnormal,vReverseLightDir),0.0f);
             outColor.rgb *= ratio + 0.5;
         }`
