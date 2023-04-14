@@ -17,8 +17,22 @@ var labelRotationZ =  document.getElementById('outputRotationZ')
 // ROOT SHAPE ID
 var aduduShapeId;
 
-function redraw() {
+function redrawAll(){
     shapes[aduduShapeId].draw(identityMatrix)
+}
+
+function redrawSingle(){
+    shapes[aduduShapeId].drawSingle(choosenShapeID,identityMatrix)
+}
+
+function redrawSubtree(){
+    shapes[aduduShapeId].drawSubtree(choosenShapeID,false,identityMatrix)
+}
+
+function redraw() {
+    redrawAll()
+    redrawSingle()
+    redrawSubtree()
 }
 
 function updateTranslation(type,displacement){
@@ -58,6 +72,7 @@ function updateRotationSingle(type,angle){
 function updateChoosenShape(id){
     console.log(id)
     choosenShapeID = id
+    redraw()
 }
 
 var sliderCamera = document.getElementById("sliderRotationCamera")

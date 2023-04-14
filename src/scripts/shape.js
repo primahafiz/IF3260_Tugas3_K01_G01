@@ -59,6 +59,35 @@ class Shape {
         }
     }
 
+    drawSingle(shapeId,parentTransformationMatrix){
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        if(this.id == shapeId){
+            this.materializeSingle()
+        }
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].drawSingle(shapeId,this.toInheritTransformationMatrix)
+        }
+    }
+
+    drawSubtree(shapeId,found,parentTransformationMatrix){
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        if(this.id == shapeId || found){
+            this.materializeSubtree()
+            found = true
+        }
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].drawSubtree(shapeId,found,this.toInheritTransformationMatrix)
+        }
+    }
+
     materialize() {
         let vertices = this.vertices
         let normal = this.getTransformedNormal()
@@ -80,6 +109,51 @@ class Shape {
             gl.drawArrays(this.webGLShape, 0, 4)
         }
     }
+
+    materializeSubtree() {
+        let vertices = this.vertices
+        let normal = this.getTransformedNormal()
+        this.transformationMatrix = this.getTransformedMatrix()
+        this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
+        glSubtree.uniformMatrix4fv(projectionMatrixLocationSubtree, false, flatten(this.projection_matrix));
+        glSubtree.uniformMatrix4fv(modelMatrixLocationSubtree, false, flatten(this.transformationMatrix));
+        glSubtree.uniformMatrix4fv(viewMatrixLocationSubtree, false, flatten(viewMatrix))
+        for (let i = 0; i < vertices.length; i += 12) {
+            let verticesToDraw = []
+            for (let j = 0; j < 12; j += 3) {
+                if (shading) {
+                    verticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], normal[i + j], normal[i + j + 1], normal[i + j + 2]);
+                } else {
+                    verticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], 0, 0, 1);
+                }
+            }
+            glSubtree.bufferData(glSubtree.ARRAY_BUFFER, new Float32Array(verticesToDraw), glSubtree.STATIC_DRAW)
+            glSubtree.drawArrays(this.webGLShape, 0, 4)
+        }
+    }
+
+    materializeSingle() {
+        let vertices = this.vertices
+        let normal = this.getTransformedNormal()
+        this.transformationMatrix = this.getTransformedMatrix()
+        this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
+        glSingle.uniformMatrix4fv(projectionMatrixLocationSingle, false, flatten(this.projection_matrix));
+        glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(this.transformationMatrix));
+        glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(viewMatrix))
+        for (let i = 0; i < vertices.length; i += 12) {
+            let verticesToDraw = []
+            for (let j = 0; j < 12; j += 3) {
+                if (shading) {
+                    verticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], normal[i + j], normal[i + j + 1], normal[i + j + 2]);
+                } else {
+                    verticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], 0, 0, 1);
+                }
+            }
+            glSingle.bufferData(glSingle.ARRAY_BUFFER, new Float32Array(verticesToDraw), glSingle.STATIC_DRAW)
+            glSingle.drawArrays(this.webGLShape, 0, 4)
+        }
+    }
+
 
     rotate(type,angle) {
         if(type == 'x'){
