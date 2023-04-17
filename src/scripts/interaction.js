@@ -13,26 +13,35 @@ var labelScalingZ = document.getElementById('outputSz')
 var labelRotationX =  document.getElementById('outputRotationX')
 var labelRotationY =  document.getElementById('outputRotationY')
 var labelRotationZ =  document.getElementById('outputRotationZ')
+var currentTextureMode = TextureMode.NONE
 
 // ROOT SHAPE ID
 var aduduShapeId;
 
 function redrawAll(){
-    shapes[aduduShapeId].draw(identityMatrix)
+    if(currentTextureMode == TextureMode.NONE){
+        shapes[aduduShapeId].draw(identityMatrix)
+    }else if(currentTextureMode == TextureMode.IMAGE){
+        listVertices = []
+        shapes[aduduShapeId].traverse(identityMatrix)
+        initImageAll()
+    }
 }
 
 function redrawSingle(){
-    shapes[aduduShapeId].drawSingle(choosenShapeID,identityMatrix)
+    if(currentTextureMode == TextureMode.NONE){
+        shapes[aduduShapeId].drawSingle(choosenShapeID,identityMatrix)
+    }else if(currentTextureMode == TextureMode.IMAGE){
+        listVerticesSingle = []
+        listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
+        initImageSingle()
+    }
 }
 
-function redrawSubtree(){
-    shapes[aduduShapeId].drawSubtree(choosenShapeID,false,identityMatrix)
-}
 
 function redraw() {
     redrawAll()
     redrawSingle()
-    redrawSubtree()
 }
 
 function updateTranslation(type,displacement){
@@ -247,6 +256,11 @@ function changeHierarchy(rootShapeId){
     shapes[rootShapeId].getHierarchy(0,hierarchy)
 
     renderHierarchy(hierarchy)
+}
+
+function updateTextureChosen(){
+    currentTextureMode = parseInt(document.getElementById('texturelists').value)
+    redraw()
 }
 
 // Dummy data

@@ -64,11 +64,12 @@ function getRotationZMatrix(x) {
 }
 
 function getCenterPoint(vertices,transformationMatrix) {
+    let newTransformationMatrix = transpose(transformationMatrix)
     let transformedVertices = []
     for (let i = 0; i < vertices.length; i += 12) {
         for (let j = 0; j < 12; j += 3) {
             let newVertex = [[vertices[i + j]], [vertices[i + j + 1]], [vertices[i + j + 2]], [1]]
-            let retMat = multiplyMatrix(transformationMatrix, newVertex)
+            let retMat = multiplyMatrix(newTransformationMatrix, newVertex)
 
             transformedVertices.push(retMat[0][0], retMat[1][0], retMat[2][0])
         }

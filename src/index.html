@@ -24,6 +24,13 @@
                     <option value="2">Triangle Prism</option>
                 </select>
             </div>
+            <div style="margin-top: 10px;">
+                <label>Texture</label>
+                <select id="texturelists" name="texturelists" onchange="updateTextureChosen()">
+                    <option value="0" selected>None</option>
+                    <option value="1">Image</option>
+                </select>
+            </div>
             </br>
             <b>Set object angle</b>
             <div>
@@ -172,10 +179,6 @@
                     </canvas>
                 </span>
             </div>
-            <div>
-                <canvas id="canvasSubtree" width="600px" height="600px">
-                </canvas>
-            </div>
         </div>
         <div id="hierarchy" class="toolbar right-div">
             <!--
@@ -241,8 +244,10 @@
 </body>
 
 <!-- Script -->
-<script src="./scripts/init.js"></script>
+<script src="./scripts/enum.js"></script>
 <script src="./scripts/utils.js"></script>
+<script src="./scripts/init.js"></script>
+<script src="./scripts/imageMap.js"></script>
 <script src="./scripts/shape.js"></script>
 <script src="./scripts/model.js"></script>
 <script src="./scripts/modelTubes2.js"></script>

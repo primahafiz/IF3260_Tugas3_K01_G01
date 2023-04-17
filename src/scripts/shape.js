@@ -286,12 +286,11 @@ class Shape {
 
     getTransformedVertices() {
         let vertices = []
-        this.reset()
-        this.getTransformedMatrixNonWebgl()
+        let transformationMatrix = this.getTransformedMatrixNonWebgl()
         for (let i = 0; i < this.vertices.length; i += 12) {
             for (let j = 0; j < 12; j += 3) {
                 let newVertex = [[this.vertices[i + j]], [this.vertices[i + j + 1]], [this.vertices[i + j + 2]], [1]]
-                let retMat = multiplyMatrix(this.transformationMatrix, newVertex)
+                let retMat = multiplyMatrix(transformationMatrix, newVertex)
 
                 vertices.push(retMat[0][0], retMat[1][0], retMat[2][0])
             }
@@ -348,5 +347,54 @@ class Shape {
         this.scaleZSingle = 1
 
         this.projection_matrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 0, 0], [0, 0, 0, 1]]
+    }
+
+    getListVerticesToDraw(){
+        let vertices = this.getTransformedVertices()
+        let normal = this.getTransformedNormal()
+
+        let listVerticesToDraw = []
+        for(let i=0;i<vertices.length;i+=12){
+            for (let j = 0; j < 12; j += 3) {
+                listVerticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], normal[i + j], normal[i + j + 1], normal[i + j + 2]);
+            }
+        }
+        return listVerticesToDraw
+    }
+
+    traverse(parentTransformationMatrix){
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        let currentListVerticesToDraw = this.getListVerticesToDraw()
+        this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
+
+        for(let i=0;i<currentListVerticesToDraw.length;i++){
+            listVertices.push(currentListVerticesToDraw[i])
+        }
+
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].traverse(this.toInheritTransformationMatrix)
+        }
+    }
+
+    traverseSubtree(parentTransformationMatrix){
+        for(let i=0;i<4;i++){
+            for(let j=0;j<4;j++){
+                this.parentMatrix[i][j] = parentTransformationMatrix[i][j]
+            }
+        }
+        let currentListVerticesToDraw = this.getListVerticesToDraw()
+        this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
+
+        for(let i=0;i<currentListVerticesToDraw.length;i++){
+            listVerticesSubtree.push(currentListVerticesToDraw[i])
+        }
+
+        for(let i=0;i<this.childShape.length;i++){
+            this.childShape[i].traverseSubtree(this.toInheritTransformationMatrix)
+        }
     }
 }
