@@ -115,6 +115,12 @@ function initImageAll() {
     
         void main() {
             gl_FragColor = texture2D(u_texture, v_texcoord);
+
+            vec3 vReverseLightDir = vec3(0.0,0.0,-1.0);
+            float ratio = 0.5 * dot(vnormal,vReverseLightDir);
+
+            gl_FragColor.rgb *= ratio + 0.5;
+        
         }`
     }
     gl.shaderSource(vertexShader, shadderSource.vertexShaderSource);
@@ -333,6 +339,11 @@ function initImageSingle() {
     
         void main() {
             gl_FragColor = texture2D(u_texture, v_texcoord);
+
+            vec3 vReverseLightDir = vec3(0.0,0.0,-1.0);
+            float ratio = 0.5 * dot(vnormal,vReverseLightDir);
+
+            gl_FragColor.rgb *= ratio + 0.5;
         }`
     }
     glSingle.shaderSource(vertexShaderSingle, shadderSourceSingle.vertexShaderSourceSingle);
