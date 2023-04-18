@@ -29,6 +29,10 @@ function redrawAll(){
         listVertices = []
         shapes[choosenRootShapeID].traverse(identityMatrix)
         initEnvironmentAll()
+    }else if(currentTextureMode == TextureMode.BUMP){
+        listVertices = []
+        shapes[choosenRootShapeID].traverse(identityMatrix)
+        initBumpAll()
     }
 }
 
@@ -44,6 +48,10 @@ function redrawSingle(){
         listVerticesSingle = []
         listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
         initEnvironmentSingle()
+    }else if(currentTextureMode == TextureMode.BUMP){
+        listVerticesSingle = []
+        listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
+        initBumpSingle()
     }
 }
 
