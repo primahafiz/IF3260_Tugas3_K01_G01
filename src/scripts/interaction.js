@@ -1,4 +1,6 @@
 var choosenShapeID;
+// TODO
+var choosenRootShapeID = 0; // Currently point to adudumodel body
 shapes = {}
 var lastViewAngle = 0
 var identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -18,14 +20,14 @@ var currentTextureMode = TextureMode.NONE
 function redrawAll(){
     if(currentTextureMode == TextureMode.NONE){
         initAll()
-        shapes[choosenShapeID].draw(identityMatrix)
+        shapes[choosenRootShapeID].draw(identityMatrix)
     }else if(currentTextureMode == TextureMode.IMAGE){
         listVertices = []
-        shapes[choosenShapeID].traverse(identityMatrix)
+        shapes[choosenRootShapeID].traverse(identityMatrix)
         initImageAll()
     }else if(currentTextureMode == TextureMode.ENVIRONMENT){
         listVertices = []
-        shapes[choosenShapeID].traverse(identityMatrix)
+        shapes[choosenRootShapeID].traverse(identityMatrix)
         initEnvironmentAll()
     }
 }
