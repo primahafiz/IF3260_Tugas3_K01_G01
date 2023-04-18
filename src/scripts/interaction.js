@@ -39,7 +39,9 @@ function redrawSingle(){
         listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
         initImageSingle()
     }else if(currentTextureMode == TextureMode.ENVIRONMENT){
-        // TODO
+        listVerticesSingle = []
+        listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
+        initEnvironmentSingle()
     }
 }
 
