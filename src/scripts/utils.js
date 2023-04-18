@@ -1,4 +1,5 @@
 let objectPicker = document.getElementById('objectlist');
+
 objectPicker.selectedIndex = 0;
 let projectionPicker = document.getElementById('projection_selector');
 projectionPicker.selectedIndex = 0;
@@ -105,9 +106,17 @@ function getScalingMatrix(x, y, z) {
     return mat
 }
 
+function loadOptions(){
+    // Loop through all options and set their values based on the modelIds object
+    for (var i = 0; i < objectPicker.options.length; i++) {
+      var option = objectPicker.options[i];
+      option.value = modelIds[option.value];
+    }
+}  
+
 function updateObjectChosen() {
     choosenShapeID = objectPicker.value
-    chosenShape = shapes[choosenShapeID]
+    redraw()
     // TODO : Update slider value and label
     // updateAngleValue(shapes[choosenShapeID].curAngleX, shapes[choosenShapeID].curAngleY, shapes[choosenShapeID].curAngleZ)
     // updateTranslationValue(shapes[choosenShapeID].translateX, shapes[choosenShapeID].translateY, shapes[choosenShapeID].translateZ)
