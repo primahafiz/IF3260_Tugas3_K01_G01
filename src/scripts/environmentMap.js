@@ -5,29 +5,29 @@ var justUsedEnvSingle = false;
 function setupImageEnvironment(glContext){
     faceInfos = [
         {
-          target: glContext.TEXTURE_CUBE_MAP_POSITIVE_X,
-          url: '../src/asset/pos-x.png',
-        },
-        {
-          target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_X,
-          url: '../src/asset/neg-x.png',
-        },
-        {
-          target: glContext.TEXTURE_CUBE_MAP_POSITIVE_Y,
-          url: '../src/asset/pos-y.png',
-        },
-        {
-          target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_Y,
-          url: '../src/asset/neg-y.png',
-        },
-        {
-          target: glContext.TEXTURE_CUBE_MAP_POSITIVE_Z,
-          url: '../src/asset/pos-z.png',
-        },
-        {
-          target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_Z,
-          url: '../src/asset/neg-z.png',
-        },
+            target: glContext.TEXTURE_CUBE_MAP_POSITIVE_X,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/pos-x.jpg',
+          },
+          {
+            target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_X,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/neg-x.jpg',
+          },
+          {
+            target: glContext.TEXTURE_CUBE_MAP_POSITIVE_Y,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/pos-y.jpg',
+          },
+          {
+            target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_Y,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/neg-y.jpg',
+          },
+          {
+            target: glContext.TEXTURE_CUBE_MAP_POSITIVE_Z,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/pos-z.jpg',
+          },
+          {
+            target: glContext.TEXTURE_CUBE_MAP_NEGATIVE_Z,
+            url: 'https://webglfundamentals.org/webgl/resources/images/computer-history-museum/neg-z.jpg',
+          },
       ];
 }
 
