@@ -18,14 +18,14 @@ var currentTextureMode = TextureMode.NONE
 function redrawAll(){
     if(currentTextureMode == TextureMode.NONE){
         initAll()
-        shapes[aduduShapeId].draw(identityMatrix)
+        shapes[choosenShapeID].draw(identityMatrix)
     }else if(currentTextureMode == TextureMode.IMAGE){
         listVertices = []
         shapes[choosenShapeID].traverse(identityMatrix)
         initImageAll()
     }else if(currentTextureMode == TextureMode.ENVIRONMENT){
         listVertices = []
-        shapes[aduduShapeId].traverse(identityMatrix)
+        shapes[choosenShapeID].traverse(identityMatrix)
         initEnvironmentAll()
     }
 }
@@ -33,7 +33,7 @@ function redrawAll(){
 function redrawSingle(){
     if(currentTextureMode == TextureMode.NONE){
         initSingle()
-        shapes[aduduShapeId].drawSingle(choosenShapeID,identityMatrix)
+        shapes[choosenShapeID].drawSingle(choosenShapeID,identityMatrix)
     }else if(currentTextureMode == TextureMode.IMAGE){
         listVerticesSingle = []
         listVerticesSingle = shapes[choosenShapeID].getListVerticesToDraw()
