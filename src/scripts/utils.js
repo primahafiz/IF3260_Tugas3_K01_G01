@@ -115,8 +115,9 @@ function loadOptions(){
 }  
 
 function updateObjectChosen() {
-    choosenShapeID = objectPicker.value
-    redraw()
+    choosenShapeID = objectPicker.value;
+    redraw();
+    changeHierarchy(choosenShapeID);
     // TODO : Update slider value and label
     // updateAngleValue(shapes[choosenShapeID].curAngleX, shapes[choosenShapeID].curAngleY, shapes[choosenShapeID].curAngleZ)
     // updateTranslationValue(shapes[choosenShapeID].translateX, shapes[choosenShapeID].translateY, shapes[choosenShapeID].translateZ)

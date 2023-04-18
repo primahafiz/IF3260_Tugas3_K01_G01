@@ -239,6 +239,7 @@ function initShapes(){
     }
 
     choosenShapeID = modelIds.adudu;
+    changeHierarchy(choosenShapeID);
     redraw()
 }
 
