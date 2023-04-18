@@ -26,10 +26,6 @@ function redrawAll(){
     }else if(currentTextureMode == TextureMode.ENVIRONMENT){
         listVertices = []
         shapes[aduduShapeId].traverse(identityMatrix)
-        initImageAll()
-    }else if(currentTextureMode == TextureMode.ENVIRONMENT){
-        listVertices = []
-        shapes[aduduShapeId].traverse(identityMatrix)
         initEnvironmentAll()
     }
 }
