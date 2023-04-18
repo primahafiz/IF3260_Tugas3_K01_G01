@@ -375,3 +375,9 @@ function renderHierarchy(hierarchy){
     }
     doc.innerHTML = ans
 }
+
+function requestCORSIfNotSameOrigin(img, url) {
+    if ((new URL(url, window.location.href)).origin !== window.location.origin) {
+      img.crossOrigin = "";
+    }
+  }

@@ -270,6 +270,6 @@ function initSingle() {
     glSingle.useProgram(programSingle);
 }
 
-// //Initialize the WebGL
+//Initialize the WebGL
 initAll();
 initSingle();

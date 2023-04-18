@@ -1,12 +1,6 @@
 var listVertices = [];
 var listVerticesSingle = [];
 
-function requestCORSIfNotSameOrigin(img, url) {
-    if ((new URL(url, window.location.href)).origin !== window.location.origin) {
-      img.crossOrigin = "";
-    }
-  }
-
 var baseImageTextureCoord = [
     // // top rung front
     32 / 63,  20 / 63,
