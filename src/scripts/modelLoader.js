@@ -61,7 +61,33 @@ function initPigShape(){
     shapes[backRightFootShape.id] = backRightFootShape
 }
 
+function initSteveShape() {
+    let bodyShape = new Shape(steveModel['body']['vertices'],steveModel['body']['normal'],steveModel['body']['color'],gl.TRIANGLE_FAN,'body')
+    let headShape = new Shape(steveModel['head']['vertices'],steveModel['head']['normal'],steveModel['head']['color'],gl.TRIANGLE_FAN,'head')
+    let torsoLeftShape = new Shape(steveModel['torsoLeft']['vertices'],steveModel['torsoLeft']['normal'],steveModel['torsoLeft']['color'],gl.TRIANGLE_FAN,'torsoLeft')
+    let torsoRightShape = new Shape(steveModel['torsoRight']['vertices'],steveModel['torsoRight']['normal'],steveModel['torsoRight']['color'],gl.TRIANGLE_FAN,'torsoRight')
+    let footLeftShape = new Shape(steveModel['footLeft']['vertices'],steveModel['footLeft']['normal'],steveModel['footLeft']['color'],gl.TRIANGLE_FAN,'footLeft')
+    let footRightShape = new Shape(steveModel['footRight']['vertices'],steveModel['footRight']['normal'],steveModel['footRight']['color'],gl.TRIANGLE_FAN,'footRight')
+
+    steveShapeId = bodyShape.id
+    modelIds['steve'] = steveShapeId
+
+    bodyShape.addChild(headShape)
+    bodyShape.addChild(torsoLeftShape)
+    bodyShape.addChild(torsoRightShape)
+    bodyShape.addChild(footLeftShape)
+    bodyShape.addChild(footRightShape)
+
+    shapes[bodyShape.id] = bodyShape
+    shapes[headShape.id] = headShape
+    shapes[torsoLeftShape.id] = torsoLeftShape
+    shapes[torsoRightShape.id] = torsoRightShape
+    shapes[footLeftShape.id] = footLeftShape
+    shapes[footRightShape.id] = footRightShape
+}
+
 function initModels(){
     initAduduShape()
     initPigShape()
+    initSteveShape()
 }

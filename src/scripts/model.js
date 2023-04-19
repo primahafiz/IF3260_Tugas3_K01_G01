@@ -317,3 +317,158 @@ const pigModel = {
 
 }
 
+const bodyHeight = 0.4
+const bodyWidth = 0.2
+const bodyLength = 0.15
+
+const headHeight = 0.25
+const headWidth = 0.2
+const headLength = 0.4
+
+const torsoLength = 0.5
+const torsoWidth = 0.2
+const torsoDepth = 0.15
+
+
+const steveModel = {
+    "head":{
+        "vertices": [
+            -headWidth, bodyHeight+headLength, -headHeight,
+            headWidth, bodyHeight+headLength, -headHeight,
+            headWidth, bodyHeight+headLength, headHeight,
+            -headWidth, bodyHeight+headLength, headHeight,
+            
+            headWidth, bodyHeight, -headHeight,
+            -headWidth, bodyHeight, -headHeight,
+            -headWidth, bodyHeight, headHeight,
+            headWidth, bodyHeight, headHeight,
+            
+            -headWidth, bodyHeight, headHeight,
+            -headWidth, bodyHeight, -headHeight,
+            -headWidth, bodyHeight+headLength, -headHeight,
+            -headWidth, bodyHeight+headLength, headHeight,
+            
+            headWidth, bodyHeight, -headHeight,
+            headWidth, bodyHeight, headHeight,
+            headWidth, bodyHeight+headLength, headHeight,
+            headWidth, bodyHeight+headLength, -headHeight,
+            
+            -headWidth, bodyHeight, -headHeight,
+            headWidth, bodyHeight, -headHeight,
+            headWidth, bodyHeight+headLength, -headHeight,
+            -headWidth, bodyHeight+headLength, -headHeight,
+            
+            headWidth, bodyHeight, headHeight,
+            -headWidth, bodyHeight, headHeight,
+            -headWidth, bodyHeight+headLength, headHeight,
+            headWidth, bodyHeight+headLength, headHeight
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [169/255,125/255,100/255]
+        // (169,125,100)
+    },
+    "body":{
+        "vertices" : [
+            -bodyWidth,bodyHeight,-bodyLength,  bodyWidth,bodyHeight,-bodyLength,  bodyWidth,bodyHeight,bodyLength,  -bodyWidth,bodyHeight,bodyLength,
+            bodyWidth,-bodyHeight,-bodyLength,  -bodyWidth,-bodyHeight,-bodyLength,  -bodyWidth,-bodyHeight,bodyLength, bodyWidth,-bodyHeight,bodyLength,
+            -bodyWidth,-bodyHeight,bodyLength,  -bodyWidth,-bodyHeight,-bodyLength,  -bodyWidth,bodyHeight,-bodyLength,  -bodyWidth,bodyHeight,bodyLength,
+            bodyWidth,-bodyHeight,-bodyLength,  bodyWidth,-bodyHeight,bodyLength,  bodyWidth,bodyHeight,bodyLength,  bodyWidth,bodyHeight,-bodyLength,
+            -bodyWidth,-bodyHeight,-bodyLength,  bodyWidth,-bodyHeight,-bodyLength,  bodyWidth,bodyHeight,-bodyLength,  -bodyWidth,bodyHeight,-bodyLength,
+            bodyWidth,-bodyHeight,bodyLength,  -bodyWidth,-bodyHeight,bodyLength,  -bodyWidth,bodyHeight,bodyLength,  bodyWidth,bodyHeight,bodyLength
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [14/255,174/255,174/255]
+        // (14,174,174)
+    },
+    "torsoLeft":{
+        "vertices" : [
+            -bodyWidth-torsoWidth,bodyHeight,-torsoDepth,  -bodyWidth,bodyHeight,-torsoDepth,  -bodyWidth,bodyHeight,torsoDepth,  -bodyWidth-torsoWidth,bodyHeight,torsoDepth,
+            -bodyWidth,-bodyHeight,-torsoDepth,  -bodyWidth-torsoWidth,-bodyHeight,-torsoDepth,  -bodyWidth-torsoWidth,-bodyHeight,torsoDepth, -bodyWidth,-bodyHeight,torsoDepth,
+            -bodyWidth-torsoWidth,-bodyHeight,torsoDepth,  -bodyWidth-torsoWidth,-bodyHeight,-torsoDepth,  -bodyWidth-torsoWidth,bodyHeight,-torsoDepth,  -bodyWidth-torsoWidth,bodyHeight,torsoDepth,
+            -bodyWidth,-bodyHeight,-torsoDepth,  -bodyWidth,-bodyHeight,torsoDepth,  -bodyWidth,bodyHeight,torsoDepth,  -bodyWidth,bodyHeight,-torsoDepth,
+            -bodyWidth-torsoWidth,-bodyHeight,-torsoDepth,  -bodyWidth,-bodyHeight,-torsoDepth,  -bodyWidth,bodyHeight,-torsoDepth,  -bodyWidth-torsoWidth,bodyHeight,-torsoDepth,
+            -bodyWidth,-bodyHeight,torsoDepth,  -bodyWidth-torsoWidth,-bodyHeight,torsoDepth,  -bodyWidth-torsoWidth,bodyHeight,torsoDepth,  -bodyWidth,bodyHeight,torsoDepth
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [169/255,125/255,100/255]
+    },
+    "torsoRight":{
+        "vertices" : [
+            bodyWidth,bodyHeight,-torsoDepth,  bodyWidth+torsoWidth,bodyHeight,-torsoDepth,  bodyWidth+torsoWidth,bodyHeight,torsoDepth,  bodyWidth,bodyHeight,torsoDepth,
+            bodyWidth+torsoWidth,-bodyHeight,-torsoDepth,  bodyWidth,-bodyHeight,-torsoDepth,  bodyWidth,-bodyHeight,torsoDepth, bodyWidth+torsoWidth,-bodyHeight,torsoDepth,
+            bodyWidth,-bodyHeight,torsoDepth,  bodyWidth,-bodyHeight,-torsoDepth,  bodyWidth,bodyHeight,-torsoDepth,  bodyWidth,bodyHeight,torsoDepth,
+            bodyWidth+torsoWidth,-bodyHeight,-torsoDepth,  bodyWidth+torsoWidth,-bodyHeight,torsoDepth,  bodyWidth+torsoWidth,bodyHeight,torsoDepth,  bodyWidth+torsoWidth,bodyHeight,-torsoDepth,
+            bodyWidth,-bodyHeight,-torsoDepth,  bodyWidth+torsoWidth,-bodyHeight,-torsoDepth,  bodyWidth+torsoWidth,bodyHeight,-torsoDepth,  bodyWidth,bodyHeight,-torsoDepth,
+            bodyWidth+torsoWidth,-bodyHeight,torsoDepth,  bodyWidth,-bodyHeight,torsoDepth,  bodyWidth,bodyHeight,torsoDepth,  bodyWidth+torsoWidth,bodyHeight,torsoDepth
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [169/255,125/255,100/255]
+    },
+    "footLeft":{
+        "vertices" : [
+            -bodyWidth/100-torsoWidth,-bodyHeight,-torsoDepth,  -bodyWidth/100,-bodyHeight,-torsoDepth,  -bodyWidth/100,-bodyHeight,torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight,torsoDepth,
+            -bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,torsoDepth, -bodyWidth/100,-bodyHeight-torsoLength,torsoDepth,
+            -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight,-torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight,torsoDepth,
+            -bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100,-bodyHeight-torsoLength,torsoDepth,  -bodyWidth/100,-bodyHeight,torsoDepth,  -bodyWidth/100,-bodyHeight,-torsoDepth,
+            -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  -bodyWidth/100,-bodyHeight,-torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight,-torsoDepth,
+            -bodyWidth/100,-bodyHeight-torsoLength,torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight-torsoLength,torsoDepth,  -bodyWidth/100-torsoWidth,-bodyHeight,torsoDepth,  -bodyWidth/100,-bodyHeight,torsoDepth
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [73/255,70/255,151/255]
+        // (73,70,151)
+    },
+    "footRight":{
+        "vertices" : [
+            bodyWidth/100,-bodyHeight,-torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,-torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,torsoDepth,  bodyWidth/100,-bodyHeight,torsoDepth,
+            bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100,-bodyHeight-torsoLength,torsoDepth, bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,torsoDepth,
+            bodyWidth/100,-bodyHeight-torsoLength,torsoDepth,  bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100,-bodyHeight,-torsoDepth,  bodyWidth/100,-bodyHeight,torsoDepth,
+            bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,-torsoDepth,
+            bodyWidth/100,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,-torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,-torsoDepth,  bodyWidth/100,-bodyHeight,-torsoDepth,
+            bodyWidth/100+torsoWidth,-bodyHeight-torsoLength,torsoDepth,  bodyWidth/100,-bodyHeight-torsoLength,torsoDepth,  bodyWidth/100,-bodyHeight,torsoDepth,  bodyWidth/100+torsoWidth,-bodyHeight,torsoDepth
+        ],
+        "normal" : [
+            0,1,0,  0,1,0,  0,1,0,  0,1,0,
+            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
+            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
+            1,0,0,  1,0,0,  1,0,0,  1,0,0,
+            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
+            0,0,1,  0,0,1,  0,0,1,  0,0,1
+        ],
+        "color" : [73/255,70/255,151/255]
+    },
+}
