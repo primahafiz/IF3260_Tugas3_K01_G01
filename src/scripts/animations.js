@@ -365,3 +365,589 @@ const pigWalkAnim = {
         ],
     ]
 }
+
+const steveWalkAnim = {
+    "model_id": "steve",
+    "second_between_frames": 0.2,
+    "frames": [
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],        
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],        
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+    ]
+}
+
+const aduduWalkAnim = {
+    "model_id": "adudu",
+    "second_between_frames": 0.2,
+    "frames": [
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],        
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            }
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],        
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],
+        [
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 5,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+    ]
+}

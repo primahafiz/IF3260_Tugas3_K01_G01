@@ -1,6 +1,8 @@
 const animations = {
     "pig_example": pigExampleAnim,
-    "pig_walk": pigWalkAnim
+    "pig_walk": pigWalkAnim,
+    "steve_walk": steveWalkAnim,
+    "adudu_walk": aduduWalkAnim
 }
 
 var animationChosen = "pig_walk";
