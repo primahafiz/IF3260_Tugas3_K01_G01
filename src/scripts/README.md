@@ -95,4 +95,18 @@ const animations = {
 ```bash
 playAnimation('placeholder')
 ```
+
+4. Tambahin animation di index.html
+```html
+            <!-- Sekitar line 166 -->
+            <b>Animations</b>
+            <div>
+                <select id="animation_selector" name="animation_selector" onchange="updateAnimationChosen()">
+                    <option value="pig_walk" selected>Pig Walk</option>
+                    <!-- Tambahin animasi di sini, misalnya -->
+                    <option value="placeholder">Placeholder</option>
+                </select>
+                <button id="playAnimBtn" onclick="playAnimation(animationChosen)">Play</button>
+            </div>
+            </br>
 ```
