@@ -165,7 +165,7 @@ resetBtn.addEventListener("click", function (e) {
 // save
 var saveBtn = document.getElementById("saveBtn")
 saveBtn.addEventListener("click", function (event) {
-    let json = JSON.stringify(shapes[choosenShapeID]);
+    let json = JSON.stringify(shapes[choosenRootShapeID]);
     let blob = new Blob([json], { type: "application/json" });
     let url = URL.createObjectURL(blob);
     let a = document.createElement('a');
@@ -182,29 +182,32 @@ loadBtn.addEventListener("click", function (event) {
     Shape.ID = 0;
     reader.onload = function (event) {
         let shapesInput = JSON.parse(event.target.result);
-        let parentShape = new Shape(shapesInput.vertices, shapesInput.normal, shapesInput.color, shapesInput.webGLShape, shapesInput.nameShape);
-        shapes[parentShape.id] = parentShape;
-        const queue = shapesInput.childShape;
+        let parentShape = 0;
+        let childShape;
+        const queue = [[shapesInput, parentShape]];
 
         while (queue.length > 0) {
             const current = queue.shift();
             if (current === null) continue;
 
-            const childShape = new Shape(current.vertices, current.normal, current.color, current.webGLShape, current.nameShape);
-            parentShape.addChild(childShape);
-            shapes[childShape.id] = childShape;
+            if (parentShape === 0) {
+                parentShape = new Shape(current[0].vertices, current[0].normal, current[0].color, current[0].webGLShape, current[0].nameShape);
+                shapes[parentShape.id] = parentShape;
+                childShape = parentShape;
+            } else {
+                parentShape = current[1];
+                childShape = new Shape(current[0].vertices, current[0].normal, current[0].color, current[0].webGLShape, current[0].nameShape);
+                parentShape.addChild(childShape);
+                shapes[childShape.id] = childShape;
+            }
 
-            for (const child of current.childShape) {
-                parentShape = childShape;
-                queue.push(child);
+            for (const child of current[0].childShape) {
+                queue.push([child, childShape]);
             }
         }
-
-        console.log(shapes);
-
-        choosenRootShapeID = parentShape.id;
-        choosenShapeID = parentShape.id;
-        changeHierarchy(parentShape.id);
+        choosenRootShapeID = 0;
+        choosenShapeID = 0;
+        changeHierarchy(0);
         objectPicker.value = "";
         redraw();
     };
