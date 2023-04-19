@@ -1,5 +1,6 @@
 const animations = {
-    "pig_example": pigExampleAnim
+    "pig_example": pigExampleAnim,
+    "pig_walk": pigWalkAnim
 }
 
 function playAnimation(animationName, currentFrame = 0, loop = false){
