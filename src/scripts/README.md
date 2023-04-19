@@ -62,3 +62,37 @@ function initModels(){
                     <!-- valuenya berupa key di modelIds -->
                 </select>
 ```
+
+## Cara nambahin animasi buat model baru yes
+1. Bikin object animasi di `src/scripts/animations.js`
+```js
+const placeholderAnim = {
+    "model_id": "{insert your model id name here}",
+    "second_between_frames": {time between frames in seconds},
+    "frames": 
+    [
+        [],
+        [],
+        []
+    ]
+}
+```
+Karena gamungkin sempet nerapin bonus, kyknya cuman bisa standar waktu antar frame aja. Jadi kalo mau bikin animasi yang lebih smooth, harus bikin frame yang lebih banyak. 
+
+model_id itu yang diset di atas, misalnya tadi model placeholder itu di kode `modelIds['placeholder'] = placeholder_model_id` punya id 'placeholder'
+
+2. tambahin di animations di `src/scripts/animation.js`
+```js
+const animations = {
+    "pig_example": pigExampleAnim
+    // add here, for example
+    "placeholder": placeholderAnim
+}
+
+```
+
+3. Play lewat console, karena sementara blm ada UI buat ngeplay animasi
+```bash
+playAnimation('placeholder')
+```
+```
