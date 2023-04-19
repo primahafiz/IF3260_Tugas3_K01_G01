@@ -254,6 +254,7 @@ function updateTextureChosen(){
 
 // Dummy data
 function initShapes(){
+    Shape.ID = 0
     shapes = {}
     initModels()
 
