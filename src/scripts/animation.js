@@ -3,7 +3,7 @@ const animations = {
     "pig_walk": pigWalkAnim
 }
 
-function playAnimation(animationName, currentFrame = 0, loop = false){
+function playAnimation(animationName, currentFrame = 0){
     let animation = animations[animationName];
     let modelRootId = modelIds[animation.model_id];
     let time_between_frames = animation.second_between_frames * 1000;
@@ -49,6 +49,6 @@ function playAnimation(animationName, currentFrame = 0, loop = false){
         setTimeout(function() {
           playAnimation(animationName, currentFrame + 1);
         }, time_between_frames);
-      }
+    }
 }
 
