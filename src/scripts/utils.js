@@ -117,6 +117,7 @@ function loadOptions(){
 }  
 
 function updateObjectChosen() {
+    initShapes();
     choosenRootShapeID = objectPicker.value;
     choosenShapeID = choosenRootShapeID;
     redraw();
