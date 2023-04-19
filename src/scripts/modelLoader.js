@@ -1,5 +1,6 @@
 var aduduShapeId;
 var testShapeId2;
+var steveShapeId;
 var modelIds = {};
 
 function initAduduShape(){
