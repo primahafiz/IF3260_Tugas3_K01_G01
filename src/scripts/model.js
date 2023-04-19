@@ -234,7 +234,7 @@ const pigModel = {
         "color" : [219/255,180/255,188/255]
         // rgb(219, 180, 188)
     },
-    "front_left_foot": {
+    "front_right_foot": {
         "vertices": [
             -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
             pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2), pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
@@ -254,7 +254,7 @@ const pigModel = {
         "color": [213/255,107/255,107/255]  
         //rgb(213, 107, 107)
     },
-    "front_right_foot": {
+    "front_left_foot": {
         "vertices": [
             -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
             pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2), pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
@@ -274,7 +274,7 @@ const pigModel = {
         "color": [213/255,107/255,107/255]  
         //rgb(213, 107, 107)
     },
-    "back_left_foot": {
+    "back_right_foot": {
         "vertices": [
             -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
             pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2), pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
@@ -294,7 +294,7 @@ const pigModel = {
         "color": [213/255,107/255,107/255]  
         //rgb(213, 107, 107)
     },
-    "back_right_foot": {
+    "back_left_foot": {
         "vertices": [
             -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
             pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2), pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
