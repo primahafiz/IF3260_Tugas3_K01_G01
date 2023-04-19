@@ -164,15 +164,24 @@ const aduduModel = {
     }
 }
 
-const aduduModel2 = {
+const pig_bW = 0.4;
+const pig_bH = 0.2;
+const pig_hW = 0.42;
+const pig_hH = 0.21;
+const pig_sW = 0.1;
+const pig_sH = 0.05;
+const pig_fH = 0.14;
+const pig_fW = 0.18;
+
+const pigModel = {
     "body":{
         "vertices" : [
-            -bW,bH,-bW,  bW,bH,-bW,  bW,bH,bW,  -bW,bH,bW,
-            bW,-bH,-bW,  -bW,-bH,-bW,  -bW,-bH,bW, bW,-bH,bW,
-            -bW,-bH,bW,  -bW,-bH,-bW,  -bW,bH,-bW,  -bW,bH,bW,
-            bW,-bH,-bW,  bW,-bH,bW,  bW,bH,bW,  bW,bH,-bW,
-            -bW,-bH,-bW,  bW,-bH,-bW,  bW,bH,-bW,  -bW,bH,-bW,
-            bW,-bH,bW,  -bW,-bH,bW,  -bW,bH,bW,  bW,bH,bW
+            -pig_bW/2,pig_bH,-pig_bW,  pig_bW/2,pig_bH,-pig_bW,  pig_bW/2,pig_bH,pig_bW,  -pig_bW/2,pig_bH,pig_bW,
+            pig_bW/2,-pig_bH,-pig_bW,  -pig_bW/2,-pig_bH,-pig_bW,  -pig_bW/2,-pig_bH,pig_bW, pig_bW/2,-pig_bH,pig_bW,
+            -pig_bW/2,-pig_bH,pig_bW,  -pig_bW/2,-pig_bH,-pig_bW,  -pig_bW/2,pig_bH,-pig_bW,  -pig_bW/2,pig_bH,pig_bW,
+            pig_bW/2,-pig_bH,-pig_bW,  pig_bW/2,-pig_bH,pig_bW,  pig_bW/2,pig_bH,pig_bW,  pig_bW/2,pig_bH,-pig_bW,
+            -pig_bW/2,-pig_bH,-pig_bW,  pig_bW/2,-pig_bH,-pig_bW,  pig_bW/2,pig_bH,-pig_bW,  -pig_bW/2,pig_bH,-pig_bW,
+            pig_bW/2,-pig_bH,pig_bW,  -pig_bW/2,-pig_bH,pig_bW,  -pig_bW/2,pig_bH,pig_bW,  pig_bW/2,pig_bH,pig_bW
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -182,16 +191,17 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [0/255,0/255,0/255]
+        "color" : [210/255,143/255,146/255]
+        // rgb(210, 143, 146)
     },
     "head":{
         "vertices" : [
-            -hW,bH+hL,-hW,  hW,bH+hL,-hW,  hW,bH+hL,hW,  -hW,bH+hL,hW,
-            hW,bH,-hW,  -hW,bH,-hW,  -hW,bH,hW, hW,bH,hW,
-            -hW,bH,hW,  -hW,bH,-hW,  -hW,bH+hL,-hW,  -hW,bH+hL,hW,
-            hW,bH,-hW,  hW,bH,hW,  hW,bH+hL,hW,  hW,bH+hL,-hW,
-            -hW,bH,-hW,  hW,bH,-hW,  hW,bH+hL,-hW,  -hW,bH+hL,-hW,
-            hW,bH,hW,  -hW,bH,hW,  -hW,bH+hL,hW,  hW,bH+hL,hW
+            -pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),
+            pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2), pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),
+            -pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),
+            pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),
+            -pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,-pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,pig_hH + (3 * pig_bH / 5),-pig_hW/2 - (pig_bW * 1.2),
+            pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,-pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  -pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2),  pig_hW/2,pig_hH + (3 * pig_bH / 5),pig_hW/2 - (pig_bW * 1.2)
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -201,16 +211,17 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [41/255,138/255,130/255]
+        "color" : [218/255,117/255,131/255]
+        // rgb(218, 117, 131)
     },
-    "torsoLeft":{
+    "snot": {
         "vertices" : [
-            -bW-tW,bH,-tD,  -bW,bH,-tD,  -bW,bH,tD,  -bW-tW,bH,tD,
-            -bW,-bH,-tD,  -bW-tW,-bH,-tD,  -bW-tW,-bH,tD, -bW,-bH,tD,
-            -bW-tW,-bH,tD,  -bW-tW,-bH,-tD,  -bW-tW,bH,-tD,  -bW-tW,bH,tD,
-            -bW,-bH,-tD,  -bW,-bH,tD,  -bW,bH,tD,  -bW,bH,-tD,
-            -bW-tW,-bH,-tD,  -bW,-bH,-tD,  -bW,bH,-tD,  -bW-tW,bH,-tD,
-            -bW,-bH,tD,  -bW-tW,-bH,tD,  -bW-tW,bH,tD,  -bW,bH,tD
+            -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),
+            pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2), pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),
+            -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),
+            pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),
+            -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),-pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),
+            pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,-pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  -pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2 - (pig_hW/2 + pig_bW * 1.2),  pig_sW,pig_sH + ( 0.8 * pig_bH / 2),pig_sW/2  - (pig_hW/2 + pig_bW * 1.2)
         ],
         "normal" : [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
@@ -220,18 +231,19 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [202/255,135/255,25/255]
+        "color" : [219/255,180/255,188/255]
+        // rgb(219, 180, 188)
     },
-    "torsoRight":{
-        "vertices" : [
-            bW,bH,-tD,  bW+tW,bH,-tD,  bW+tW,bH,tD,  bW,bH,tD,
-            bW+tW,-bH,-tD,  bW,-bH,-tD,  bW,-bH,tD, bW+tW,-bH,tD,
-            bW,-bH,tD,  bW,-bH,-tD,  bW,bH,-tD,  bW,bH,tD,
-            bW+tW,-bH,-tD,  bW+tW,-bH,tD,  bW+tW,bH,tD,  bW+tW,bH,-tD,
-            bW,-bH,-tD,  bW+tW,-bH,-tD,  bW+tW,bH,-tD,  bW,bH,-tD,
-            bW+tW,-bH,tD,  bW,-bH,tD,  bW,bH,tD,  bW+tW,bH,tD
-        ],
-        "normal" : [
+    "front_left_foot": {
+        "vertices": [
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2), pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2)
+        ], 
+        "normal": [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
             0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
             -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
@@ -239,18 +251,19 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [202/255,135/255,25/255]
+        "color": [213/255,107/255,107/255]  
+        //rgb(213, 107, 107)
     },
-    "footLeft":{
-        "vertices" : [
-            -0.8*bW/2-tW,-bH,-tD,  -0.8*bW/2,-bH,-tD,  -0.8*bW/2,-bH,tD,  -0.8*bW/2-tW,-bH,tD,
-            -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2-tW,-bH-tL,tD, -0.8*bW/2,-bH-tL,tD,
-            -0.8*bW/2-tW,-bH-tL,tD,  -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2-tW,-bH,-tD,  -0.8*bW/2-tW,-bH,tD,
-            -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2,-bH-tL,tD,  -0.8*bW/2,-bH,tD,  -0.8*bW/2,-bH,-tD,
-            -0.8*bW/2-tW,-bH-tL,-tD,  -0.8*bW/2,-bH-tL,-tD,  -0.8*bW/2,-bH,-tD,  -0.8*bW/2-tW,-bH,-tD,
-            -0.8*bW/2,-bH-tL,tD,  -0.8*bW/2-tW,-bH-tL,tD,  -0.8*bW/2-tW,-bH,tD,  -0.8*bW/2,-bH,tD
-        ],
-        "normal" : [
+    "front_right_foot": {
+        "vertices": [
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2), pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 - (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 - (pig_bW - pig_fW/2)
+        ], 
+        "normal": [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
             0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
             -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
@@ -258,18 +271,19 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [37/255,45/255,53/255]
+        "color": [213/255,107/255,107/255]  
+        //rgb(213, 107, 107)
     },
-    "footRight":{
-        "vertices" : [
-            0.8*bW/2,-bH,-tD,  0.8*bW/2+tW,-bH,-tD,  0.8*bW/2+tW,-bH,tD,  0.8*bW/2,-bH,tD,
-            0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2,-bH-tL,-tD,  0.8*bW/2,-bH-tL,tD, 0.8*bW/2+tW,-bH-tL,tD,
-            0.8*bW/2,-bH-tL,tD,  0.8*bW/2,-bH-tL,-tD,  0.8*bW/2,-bH,-tD,  0.8*bW/2,-bH,tD,
-            0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2+tW,-bH-tL,tD,  0.8*bW/2+tW,-bH,tD,  0.8*bW/2+tW,-bH,-tD,
-            0.8*bW/2,-bH-tL,-tD,  0.8*bW/2+tW,-bH-tL,-tD,  0.8*bW/2+tW,-bH,-tD,  0.8*bW/2,-bH,-tD,
-            0.8*bW/2+tW,-bH-tL,tD,  0.8*bW/2,-bH-tL,tD,  0.8*bW/2,-bH,tD,  0.8*bW/2+tW,-bH,tD
-        ],
-        "normal" : [
+    "back_left_foot": {
+        "vertices": [
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2), pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),
+            -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 - (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2)
+        ], 
+        "normal": [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
             0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
             -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
@@ -277,18 +291,19 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [37/255,45/255,53/255]
+        "color": [213/255,107/255,107/255]  
+        //rgb(213, 107, 107)
     },
-    "antennaLeft":{
-        "vertices" : [
-            -0.7*hW/2,bH+hL+aL,-aD,  -0.7*hW/2-aW,bH+hL+aL,-aD,  -0.7*hW/2-aW,bH+hL+aL,aD,  -0.7*hW/2,bH+hL+aL,aD,
-            -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2,bH+hL,aD, -0.7*hW/2-aW,bH+hL,aD,
-            -0.7*hW/2,bH+hL,aD,  -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2,bH+hL+aL,-aD,  -0.7*hW/2,bH+hL+aL,aD,
-            -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL,aD,  -0.7*hW/2-aW,bH+hL+aL,aD,  -0.7*hW/2-aW,bH+hL+aL,-aD,
-            -0.7*hW/2,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL,-aD,  -0.7*hW/2-aW,bH+hL+aL,-aD,  -0.7*hW/2,bH+hL+aL,-aD,
-            -0.7*hW/2-aW,bH+hL,aD,  -0.7*hW/2,bH+hL,aD,  -0.7*hW/2,bH+hL+aL,aD,  -0.7*hW/2-aW,bH+hL+aL,aD
-        ],
-        "normal" : [
+    "back_right_foot": {
+        "vertices": [
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2), pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),
+            -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),-pig_fW/2 + (pig_bW - pig_fW/2),
+            pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),-pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  -pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2),  pig_fW/2 + (pig_bW/2 - pig_fW/2),pig_fH - (pig_bH + pig_fH),pig_fW/2 + (pig_bW - pig_fW/2)
+        ], 
+        "normal": [
             0,1,0,  0,1,0,  0,1,0,  0,1,0,
             0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
             -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
@@ -296,26 +311,9 @@ const aduduModel2 = {
             0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
             0,0,1,  0,0,1,  0,0,1,  0,0,1
         ],
-        "color" : [73/255,181/255,164/255]
-    },
-    "antennaRight":{
-        "vertices" : [
-            0.7*hW/2,bH+hL+aL,-aD,  0.7*hW/2+aW,bH+hL+aL,-aD,  0.7*hW/2+aW,bH+hL+aL,aD,  0.7*hW/2,bH+hL+aL,aD,
-            0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2,bH+hL,-aD,  0.7*hW/2,bH+hL,aD, 0.7*hW/2+aW,bH+hL,aD,
-            0.7*hW/2,bH+hL,aD,  0.7*hW/2,bH+hL,-aD,  0.7*hW/2,bH+hL+aL,-aD,  0.7*hW/2,bH+hL+aL,aD,
-            0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2+aW,bH+hL,aD,  0.7*hW/2+aW,bH+hL+aL,aD,  0.7*hW/2+aW,bH+hL+aL,-aD,
-            0.7*hW/2,bH+hL,-aD,  0.7*hW/2+aW,bH+hL,-aD,  0.7*hW/2+aW,bH+hL+aL,-aD,  0.7*hW/2,bH+hL+aL,-aD,
-            0.7*hW/2+aW,bH+hL,aD,  0.7*hW/2,bH+hL,aD,  0.7*hW/2,bH+hL+aL,aD,  0.7*hW/2+aW,bH+hL+aL,aD
-        ],
-        "normal" : [
-            0,1,0,  0,1,0,  0,1,0,  0,1,0,
-            0,-1,0,  0,-1,0,  0,-1,0,  0,-1,0,
-            -1,0,0,  -1,0,0,  -1,0,0,  -1,0,0,
-            1,0,0,  1,0,0,  1,0,0,  1,0,0,
-            0,0,-1,  0,0,-1,  0,0,-1,  0,0,-1,
-            0,0,1,  0,0,1,  0,0,1,  0,0,1
-        ],
-        "color" : [73/255,181/255,164/255]
+        "color": [213/255,107/255,107/255]  
+        //rgb(213, 107, 107)
     }
+
 }
 
