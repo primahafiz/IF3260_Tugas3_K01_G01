@@ -150,6 +150,7 @@ resetBtn.addEventListener("click", function (e) {
     viewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
     projectionPicker.selectedIndex = 0;
     choosenShapeID = 0;
+    choosenRootShapeID = 0;
     objectPicker.selectedIndex = 0;
     currentRadius = 0.5;
     initShapes()
@@ -164,19 +165,19 @@ resetBtn.addEventListener("click", function (e) {
 // save
 var saveBtn = document.getElementById("saveBtn")
 saveBtn.addEventListener("click", function (event) {
-    let savedShapes = [];
-    for (let i in shapes) {
-        let shape = shapes[i];
-        let savedShape = {
-            "id": shape.id,
-            "vertices": shape.getTransformedVertices(),
-            "normal": shape.getTransformedNormal(),
-            "color": shape.color,
-            "webGLShape": shape.webGLShape
-        };
-        savedShapes.push(savedShape);
-    }
-    let json = JSON.stringify(savedShapes);
+    // let savedShapes = [];
+    // for (let i in shapes) {
+    //     let shape = shapes[i];
+    //     let savedShape = {
+    //         "id": shape.id,
+    //         "vertices": shape.getTransformedVertices(),
+    //         "normal": shape.getTransformedNormal(),
+    //         "color": shape.color,
+    //         "webGLShape": shape.webGLShape
+    //     };
+    //     savedShapes.push(savedShape);
+    // }
+    let json = JSON.stringify(shapes[choosenShapeID]);
     let blob = new Blob([json], { type: "application/json" });
     let url = URL.createObjectURL(blob);
     let a = document.createElement('a');
@@ -192,20 +193,22 @@ loadBtn.addEventListener("click", function (event) {
     let reader = new FileReader();
     reader.onload = function (event) {
         let shapesInput = JSON.parse(event.target.result);
-        for (let i = 0; i < shapesInput.length; i++) {
-            let center = getCenterPoint(shapesInput[i].vertices)
-            for (let j = 0; j < shapesInput[i].vertices.length; j += 3) {
-                shapesInput[i].vertices[j] -= center[0]
-                shapesInput[i].vertices[j + 1] -= center[1]
-                shapesInput[i].vertices[j + 2] -= center[2]
-            }
-            let hollowShape = new Shape(shapesInput[i].vertices, shapesInput[i].normal, shapesInput[i].color, shapesInput[i].webGLShape)
-            shapes[shapesInput[i].id] = hollowShape
-            hollowShape.baseTranslateX = center[0]
-            hollowShape.baseTranslateY = center[1]
-            hollowShape.baseTranslateZ = center[2]
-            hollowShape.setId(shapesInput[i].id)
-        }
+        console.log(shapesInput);
+        shapes[shapesInput.id] = new Shape(shapesInput.vertices, shapesInput.normal, shapesInput.color, shapesInput.webGLShape);
+        // for (let i = 0; i < shapesInput.length; i++) {
+        //     let center = getCenterPoint(shapesInput[i].vertices)
+        //     for (let j = 0; j < shapesInput[i].vertices.length; j += 3) {
+        //         shapesInput[i].vertices[j] -= center[0]
+        //         shapesInput[i].vertices[j + 1] -= center[1]
+        //         shapesInput[i].vertices[j + 2] -= center[2]
+        //     }
+        //     let hollowShape = new Shape(shapesInput[i].vertices, shapesInput[i].normal, shapesInput[i].color, shapesInput[i].webGLShape)
+        //     shapes[shapesInput[i].id] = hollowShape
+        //     hollowShape.baseTranslateX = center[0]
+        //     hollowShape.baseTranslateY = center[1]
+        //     hollowShape.baseTranslateZ = center[2]
+        //     hollowShape.setId(shapesInput[i].id)
+        // }
         redraw();
     };
     try {
@@ -259,6 +262,7 @@ function initShapes(){
     }
 
     choosenShapeID = modelIds.adudu;
+    choosenRootShapeID = modelIds.adudu;
     changeHierarchy(choosenShapeID);
     redraw()
 }
