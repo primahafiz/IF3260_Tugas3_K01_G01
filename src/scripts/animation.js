@@ -3,7 +3,12 @@ const animations = {
     "pig_walk": pigWalkAnim
 }
 
+var animationChosen = "pig_walk";
+
 function playAnimation(animationName, currentFrame = 0){
+    // if animationName does not exist in animations, return
+    if (!animations[animationName] || animationName === undefined) return;
+
     let animation = animations[animationName];
     let modelRootId = modelIds[animation.model_id];
     let time_between_frames = animation.second_between_frames * 1000;

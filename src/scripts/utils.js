@@ -1,7 +1,9 @@
 let objectPicker = document.getElementById('objectlist');
-
-objectPicker.selectedIndex = 0;
+let animationPicker = document.getElementById('animation_selector');
 let projectionPicker = document.getElementById('projection_selector');
+
+animationPicker.selectedIndex = 0;
+objectPicker.selectedIndex = 0;
 projectionPicker.selectedIndex = 0;
 document.getElementById('inputFile').value = null;
 
@@ -348,6 +350,10 @@ function updateProjectionChosen() {
     else if (projectionChosen == 2) {
         changeToPerspective()
     }
+}
+
+function updateAnimationChosen(){
+    animationChosen = animationPicker.value;
 }
 
 function resetObjectLabels(){
