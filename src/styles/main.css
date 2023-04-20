@@ -53,7 +53,7 @@ input, button, select {
     margin: 0px;
     width: 20vw;
     min-width: 100px;
-    min-height: 700px;
+    min-height: 600px;
     height: 22.5vw;
     width: 20vw;
 }
@@ -123,6 +123,7 @@ Reference: https://jasonwatmore.com/post/2023/01/04/vanilla-js-css-modal-popup-d
 .jw-modal-body {
     padding: 20px;
     background: #fff;
+    color: #000;
 }
 
 body.jw-modal-open {

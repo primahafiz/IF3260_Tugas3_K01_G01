@@ -228,48 +228,128 @@
             <div class="jw-modal-body">
                 <h1>Help</h1>
                 <p>
-                    1. Website ini dibuat dengan menggunakan WebGL Murni.
+                    <b>1. Mengganti model</b>
+                        <br>
+                        &emsp;
+                        a. Pilih dari lima pilihan model yang tersedia di menu Model, yaitu Adudu, Pig, Steve, Tayo, atau Enderman.
+                        <br>
+                        &emsp;
+                        b. Pengguna dapat memilih lebih dari satu model secara bersamaan, yang akan menyebabkan model di-load tumpang tindih. 
+                        <br>
+                        &emsp;
+                        c. Pengguna wajib memilih minimal satu model. Bila tidak ada model yang dipilih, program akan default ke Adudu.
                     <br>
-                    2. Terdapat 3 buah model objek berongga (hollow objects).
+                    <b>2. Mengganti texture</b>
+                        <br>
+                        &emsp;
+                        a. Pilih dari empat jenis texture yang tersedia, yaitu none, image, environment atau bump.
+                        <br>
+                        &emsp;
+                        b. Tampilan pada model akan berganti sesuai dengan texture yang dipilih.
                     <br>
-                    3. Koordinat dan warna untuk setiap objek dapat disimpan ke dalam suatu file dengan menekan tombol
-                    "Save".
+                    <b>3. Me-load model dari file .json hasil penyimpanan (save)</b>
+                        <br>
+                        &emsp;
+                        a. Tekan tombol browse pada submenu load model pada menu Model.
+                        <br>
+                        &emsp;
+                        b. Pilih file dari file explorer yang terbuka.
+                        <br>
+                        &emsp;
+                        c. Model akan di-load berdasarkan konfigurasi file simpanan.
                     <br>
-                    4. Model yang telah disimpan dapat dibuka dengan menekan tombol "Choose File" untuk memilih file
-                    json terkait kemudian menekan tombol "Load".
+                    <b>4. Mengubah jenis proyeksi</b>
+                        <br>
+                        &emsp;
+                        a. Pilih dari tiga jenis proyeksi yang tersedia, yaitu orthogonal, oblique, atau perspective.
+                        <br>
+                        &emsp;
+                        b. Tampilan model akan berubah sesuai jenis proyeksi yang dipilih.
                     <br>
-                    5. Terdapat berbaga interaksi untuk view model. Berikut merupakan detail dari setiap interaksi yang
-                    dapat dilakukan beserta caranya.
+                    <b>5. Memilih komponen pada model</b>
+                        <br>
+                        &emsp;
+                        a. Pilih komponen yang tersedia (akan berbeda tergantung dari model yang dipilih)
+                        <br>
+                        &emsp;
+                        b. Tampilan komponen pada canvas single bagian kanan akan berubah sesuai komponen yang dipilih.
                     <br>
-                    &emsp; a. Jenis proyeksi untuk menampilkan semua objek dapat diubah dengan memilih jenis
-                    "Projection",
-                    apakah orthographic, oblique, atau perspective.
+                    <b>6. Melakukan rotasi (single/all)</b>
+                        <br>
+                        &emsp;
+                        a. Atur rotasi menggunakan ketiga slider x, y, dan z pada submenu rotasi pada menu Rotation, Translation, Scaling Settings.
+                        <br>
+                        &emsp;
+                        b. Masing-masing slider akan mengatur rotasi pada sumbu yang berbeda.
                     <br>
-                    &emsp; b. Dapat dilakukan rotasi untuk setiap objek dengan cara mengatur derajat rotasi untuk setiap
-                    sumbu
-                    (Angle X, Angle Y, Angle Z) pada bagian "Set object angle".
+                    <b>7. Melakukan translasi (single/all)</b>
+                        <br>
+                        &emsp;
+                        a. Atur translasi menggunakan ketiga slider x, y, dan z pada submenu translasi pada menu Rotation, Translation, Scaling Settings.
+                        <br>
+                        &emsp;
+                        b. Masing-masing slider akan mengatur translasi pada sumbu yang berbeda.
                     <br>
-                    &emsp; c. Dapat dilakukan translasi untuk setiap objek dengan cara mengatur besar perpindahan di
-                    setiap
-                    sumbu
-                    (X, Y, Z) pada bagian "Translation".
+                    <b>8. Melakukan scaling (single/all)</b>
+                        <br>
+                        &emsp;
+                        a. Atur scaling menggunakan ketiga slider x, y, dan z pada submenu scaling pada menu Rotation, Translation, Scaling Settings.
+                        <br>
+                        &emsp;
+                        b. Masing-masing slider akan mengatur scaling pada sumbu yang berbeda.
                     <br>
-                    &emsp; d. Dapat dilakukan scaling untuk setiap objek dengan cara mengatur besar perubahan ukuran di
-                    setiap
-                    sumbu
-                    (Sx, Sy, Sz) pada bagian "Scaling".
+                    <b>9. Mengubah jarak (radius) kamera</b>
+                        <br>
+                        &emsp;
+                        a. Atur jarak kamera menggunakan slider pada submenu camera radius pada menu Camera Settings.
+                        <br>
+                        &emsp;
+                        b. Semakin kecil angka pada camera radius, model akan terlihat semakin dekat.
                     <br>
-                    &emsp; e. Dapat dilakukan pengubahan jarak (radius) kamera view untuk mendekat atau menjauh dari
-                    model
-                    dengan mengatur besaran zoom pada "Set Camera".
+                    <b>10. Mengubah angle kamera</b>
+                        <br>
+                        &emsp;
+                        a. Atur angle kamera menggunakan slider pada submenu camera angle pada menu Camera Settings.
+                        <br>
+                        &emsp;
+                        b. Kamera dapat diputar 360 derajat mengitari model.
                     <br>
-                    &emsp; f. Dapat dilakukan pengitaran objek-objek oleh kamera view dengan mengatur "Angle" pada "Set
-                    Camera".
+                    <b>11. Me-reset ke default view</b>
+                        <br>
+                        &emsp;
+                        a. Tekan tombol reset untuk mengembalikan konfigurasi ke default, dengan model default, yaitu Adudu.
                     <br>
-                    &emsp; g. Dapat dilakukan reset view ke default untuk mengembalikan model pada kondsi awal.
+                    <b>12. Mengaktifkan/nonaktifkan shading</b>
+                        <br>
+                        &emsp;
+                        a. Tekan shading pada menu Other Settings untuk mengaktifkan/menonaktifkan shading. 
+                        <br>
+                        &emsp;
+                        b. Ketika shading diaktifkan, akan tampil gelap/terang pada model sesuai arah cahaya, yang menimbulkan efek 3D. Sebaliknya, ketika shading dinonaktifkan, efek 3D akan hilang.
                     <br>
-                    6. Shading dapat di-ON atau di-OFF kan pada saat penggambaran model dengan mencentang bagian
-                    "useShading".
+                    <b>13. Mengaktifkan animation</b>
+                        <br>
+                        &emsp;
+                        a. Pilih animasi yang sesuai dengan model saat ini.
+                        <br>
+                        &emsp;
+                        b. Tekan play 
+                        <br>
+                        &emsp;
+                        c. Animasi akan berjalan dan model akan bergerak sesuai dari animasinya.
+                    <br>
+                    <b>14. Menyimpan (save) model</b>
+                        <br>
+                        &emsp;
+                        a. Model yang telah diganti konfigurasinya dapat disimpan ke dalam file .json dengan menekan tombol save pada menu Other Settings.
+                        <br>
+                        &emsp;
+                        b. File penyimpanan akan menyimpan model beserta seluruh konfigurasi model saat itu.
+                    <br>
+                    <b>15. Membuka menu help</b>
+                    <br>
+                    &emsp;
+                    a. Tekan tombol help untuk membuka bantuan.
                 </p>
                 <button onclick="closeModal()">Close</button>
             </div>
