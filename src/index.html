@@ -123,25 +123,6 @@
                 </select>
             </div>
             </br>
-            <b>Animations</b>
-            <div>
-                <select id="animation_selector" name="animation_selector" onchange="updateAnimationChosen()">
-                    <option value="adudu_walk" selected>Adudu Walk</option>
-                    <option value="pig_walk" selected>Pig Walk</option>
-                    <option value="steve_walk" selected>Steve Walk</option>
-                    <option value="tayo_walk" selected>tayo Walk</option>
-                </select>
-                <button id="playAnimBtn" onclick="playAnimation(animationChosen)">Play</button>
-            </div>
-            </br>
-            <b>Others</b>
-            <div>
-                <button onclick="openModal('modal-1')">Help</button>
-                <button id="resetBtn">Reset</button>
-                <button id="saveBtn">Save</button>
-                <button id="loadBtn">Load</button>
-                <input type="file" id="inputFile" accept=".json">
-            </div>
         </div>
         <div class="canvas center-div">
             <div>
@@ -151,6 +132,25 @@
                     <canvas id="canvasSingle" width="600px" height="600px">
                     </canvas>
                 </span>
+            </div>
+            <b>Animations</b>
+            <div>
+                <select id="animation_selector" name="animation_selector" onchange="updateAnimationChosen()">
+                    <option value="adudu_walk" selected>Adudu Walk</option>
+                    <option value="pig_walk" selected>Pig Walk</option>
+                    <option value="steve_walk" selected>Steve Walk</option>
+                    <option value="tayo_walk" selected>tayo Walk</option>
+                    <option value="enderman_walk">Enderman Walk</option>
+                </select>
+                <button id="playAnimBtn" onclick="playAnimation(animationChosen)">Play</button>
+            </div>
+            <b>Others</b>
+            <div>
+                <button onclick="openModal('modal-1')">Help</button>
+                <button id="resetBtn">Reset</button>
+                <button id="saveBtn">Save</button>
+                <button id="loadBtn">Load</button>
+                <input type="file" id="inputFile" accept=".json">
             </div>
         </div>
         <div class="toolbar right-div">
