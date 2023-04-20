@@ -781,3 +781,26 @@ const endermanModel = {
         "color": [255 / 255, 165 / 255, 0 / 255]
     },
 }
+
+const dcW = 0.1
+const dcX = -0.9
+const dcY = -0.9
+const defaultCube = {
+    "vertices": [
+        dcX-dcW, dcX+dcW, -dcW, dcX+dcW, dcX+dcW, -dcW, dcX+dcW, dcX+dcW, dcW, dcX-dcW, dcX+dcW, dcW,
+        dcX+dcW, dcY-dcW, -dcW, dcX-dcW, dcY-dcW, -dcW, dcX-dcW, dcY-dcW, dcW, dcX+dcW, dcY-dcW, dcW,
+        dcX-dcW, dcY-dcW, dcW, dcX-dcW, dcY-dcW, -dcW, dcX-dcW, dcX+dcW, -dcW, dcX-dcW, dcX+dcW, dcW,
+        dcX+dcW, dcY-dcW, -dcW, dcX+dcW, dcY-dcW, dcW, dcX+dcW, dcX+dcW, dcW, dcX+dcW, dcX+dcW, -dcW,
+        dcX-dcW, dcY-dcW, -dcW, dcX+dcW, dcY-dcW, -dcW, dcX+dcW, dcX+dcW, -dcW, dcX-dcW, dcX+dcW, -dcW,
+        dcX+dcW, dcY-dcW, dcW, dcX-dcW, dcY-dcW, dcW, dcX-dcW, dcX+dcW, dcW, dcX+dcW, dcX+dcW, dcW
+    ],
+    "normal": [
+        0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+        0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+        -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+        1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+        0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+        0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+    ],
+    "color": [252 / 255, 198 / 255, 42 / 255]
+}

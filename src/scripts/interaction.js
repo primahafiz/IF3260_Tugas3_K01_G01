@@ -100,6 +100,16 @@ function updateChoosenShape(id){
     redraw()
 }
 
+function addComponent(){
+    let cubeAdded = new Shape(defaultCube['vertices'], defaultCube['normal'], defaultCube['color'], gl.TRIANGLE_FAN, 'cube')
+    cubeAdded.nameShape += cubeAdded.id
+    shapes[choosenShapeID].addChild(cubeAdded)
+    choosenShapeID = cubeAdded.id
+    shapes[choosenShapeID] = cubeAdded
+    changeHierarchy(choosenRootShapeID)
+    redraw()
+}
+
 var sliderCamera = document.getElementById("sliderRotationCamera")
 var sliderZoom = document.getElementById("sliderZoomCamera")
 var labelRotationCamera = document.getElementById('outputRotationCamera')
