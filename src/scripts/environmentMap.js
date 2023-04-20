@@ -166,7 +166,7 @@ function initEnvironmentAll() {
     gl.useProgram(program);
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-    gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(identityMatrix));
+    gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(globalProjectionMatrix));
         gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrix));
         gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrix))
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(listVertices), gl.STATIC_DRAW)
@@ -342,7 +342,7 @@ function initEnvironmentSingle() {
             glSingle.useProgram(programSingle);
             
             let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
-            glSingle.uniformMatrix4fv(projectionMatrixLocationSingle, false, flatten(identityMatrix));
+            glSingle.uniformMatrix4fv(projectionMatrixLocationSingle, false, flatten(globalProjectionMatrix));
             glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(identityMatrix));
             glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(identityMatrix))
             glSingle.bufferData(glSingle.ARRAY_BUFFER, new Float32Array(listVerticesSingle), glSingle.STATIC_DRAW)
