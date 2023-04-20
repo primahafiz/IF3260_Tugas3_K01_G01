@@ -7,9 +7,13 @@ var modelIds = {};
 function initAduduShape(){
     let bodyShape = new Shape(aduduModel['body']['vertices'],aduduModel['body']['normal'],aduduModel['body']['color'],gl.TRIANGLE_FAN,'body')
     let headShape = new Shape(aduduModel['head']['vertices'],aduduModel['head']['normal'],aduduModel['head']['color'],gl.TRIANGLE_FAN,'head')
+    let jointsTorsoLeftShape = new Shape(aduduModel['jointsTorsoLeft']['vertices'],aduduModel['jointsTorsoLeft']['normal'],aduduModel['jointsTorsoLeft']['color'],gl.TRIANGLE_FAN,'jointsTorsoLeft')
     let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'],aduduModel['torsoLeft']['normal'],aduduModel['torsoLeft']['color'],gl.TRIANGLE_FAN,'torsoLeft')
+    let jointsTorsoRightShape = new Shape(aduduModel['jointsTorsoRight']['vertices'],aduduModel['jointsTorsoRight']['normal'],aduduModel['jointsTorsoRight']['color'],gl.TRIANGLE_FAN,'jointsTorsoRight')
     let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'],aduduModel['torsoRight']['normal'],aduduModel['torsoRight']['color'],gl.TRIANGLE_FAN,'torsoRight')
+    let jointsFootLeftShape = new Shape(aduduModel['jointsFootLeft']['vertices'],aduduModel['jointsFootLeft']['normal'],aduduModel['jointsFootLeft']['color'],gl.TRIANGLE_FAN,'jointsFootLeft')
     let footLeftShape = new Shape(aduduModel['footLeft']['vertices'],aduduModel['footLeft']['normal'],aduduModel['footLeft']['color'],gl.TRIANGLE_FAN,'footLeft')
+    let jointsFootRightShape = new Shape(aduduModel['jointsFootRight']['vertices'],aduduModel['jointsFootRight']['normal'],aduduModel['jointsFootRight']['color'],gl.TRIANGLE_FAN,'jointsFootRight')
     let footRightShape = new Shape(aduduModel['footRight']['vertices'],aduduModel['footRight']['normal'],aduduModel['footRight']['color'],gl.TRIANGLE_FAN,'footRight')
     let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'],aduduModel['antennaLeft']['normal'],aduduModel['antennaLeft']['color'],gl.TRIANGLE_FAN,'antennaLeft')
     let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'],aduduModel['antennaRight']['normal'],aduduModel['antennaRight']['color'],gl.TRIANGLE_FAN,'antennaRight')
@@ -18,18 +22,28 @@ function initAduduShape(){
     modelIds['adudu'] = aduduShapeId
 
     bodyShape.addChild(headShape)
-    bodyShape.addChild(torsoLeftShape)
-    bodyShape.addChild(torsoRightShape)
-    bodyShape.addChild(footLeftShape)
-    bodyShape.addChild(footRightShape)
+    bodyShape.addChild(jointsTorsoLeftShape)
+    bodyShape.addChild(jointsTorsoRightShape)
+    bodyShape.addChild(jointsFootLeftShape)
+    bodyShape.addChild(jointsFootRightShape)
+
     headShape.addChild(antennaLeftShape)
     headShape.addChild(antennaRightShape)
 
+    jointsTorsoLeftShape.addChild(torsoLeftShape)
+    jointsTorsoRightShape.addChild(torsoRightShape)
+    jointsFootLeftShape.addChild(footLeftShape)
+    jointsFootRightShape.addChild(footRightShape)
+
     shapes[bodyShape.id] = bodyShape
     shapes[headShape.id] = headShape
+    shapes[jointsTorsoLeftShape.id] = jointsTorsoLeftShape
     shapes[torsoLeftShape.id] = torsoLeftShape
+    shapes[jointsTorsoRightShape.id] = jointsTorsoRightShape
     shapes[torsoRightShape.id] = torsoRightShape
+    shapes[jointsFootLeftShape.id] = jointsFootLeftShape
     shapes[footLeftShape.id] = footLeftShape
+    shapes[jointsFootRightShape.id] = jointsFootRightShape
     shapes[footRightShape.id] = footRightShape
     shapes[antennaLeftShape.id] = antennaLeftShape
     shapes[antennaRightShape.id] = antennaRightShape
