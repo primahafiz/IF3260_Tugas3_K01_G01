@@ -53,7 +53,7 @@ function getRotationYMatrix(x) {
     c = Math.cos(x)
     s = Math.sin(x)
 
-    let mat = [[c, 0, -s, 0], [0, 1, 0, 0], [s, 0, c, 0], [0, 0, 0, 1]]
+    let mat = [[c, 0, s, 0], [0, 1, 0, 0], [-s, 0, c, 0], [0, 0, 0, 1]]
     return mat
 }
 

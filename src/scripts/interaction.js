@@ -106,14 +106,14 @@ var labelRotationCamera = document.getElementById('outputRotationCamera')
 var labelZoomCamera = document.getElementById('outputZoomCamera')
 
 sliderCamera.addEventListener("input", function (e) {
-    viewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    globalViewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
     
     lastViewAngle = sliderCamera.value
     let translationMatrix = getTranslationMatrix(-1*(0.3-currentRadius)*Math.cos(toRad(lastViewAngle-90)),0,(0.3-currentRadius)*Math.sin(toRad(lastViewAngle-90)))
-    viewMatrix = multiplyMatrix(viewMatrix, translationMatrix)
+    globalViewMatrix = multiplyMatrix(globalViewMatrix, translationMatrix)
 
     let rotationViewMatrix = getRotationYMatrix(lastViewAngle)
-    viewMatrix = multiplyMatrix(viewMatrix, rotationViewMatrix)
+    globalViewMatrix = multiplyMatrix(globalViewMatrix, rotationViewMatrix)
 
 
     labelRotationCamera.innerHTML = sliderCamera.value.toString() + "°"
@@ -123,13 +123,13 @@ sliderCamera.addEventListener("input", function (e) {
 sliderZoom.addEventListener("input", function (e) {
     currentRadius = 0.3 - 0.3 * sliderZoom.value / 100
 
-    viewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+    globalViewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 
     let translationMatrix = getTranslationMatrix(-1*(0.3-currentRadius)*Math.cos(toRad(lastViewAngle-90)),0,(0.3-currentRadius)*Math.sin(toRad(lastViewAngle-90)))
-    viewMatrix = multiplyMatrix(viewMatrix, translationMatrix)
+    globalViewMatrix = multiplyMatrix(globalViewMatrix, translationMatrix)
 
     let rotationViewMatrix = getRotationYMatrix(lastViewAngle)
-    viewMatrix = multiplyMatrix(viewMatrix, rotationViewMatrix)
+    globalViewMatrix = multiplyMatrix(globalViewMatrix, rotationViewMatrix)
 
 
     redraw()

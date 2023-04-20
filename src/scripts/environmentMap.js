@@ -168,7 +168,7 @@ function initEnvironmentAll() {
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
     gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(globalProjectionMatrix));
         gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrix));
-        gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrix))
+        gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(globalViewMatrix))
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(listVertices), gl.STATIC_DRAW)
 
     let textureLocation = gl.getUniformLocation(program, "u_texture");
@@ -344,7 +344,7 @@ function initEnvironmentSingle() {
             let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             glSingle.uniformMatrix4fv(projectionMatrixLocationSingle, false, flatten(globalProjectionMatrix));
             glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(identityMatrix));
-            glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(identityMatrix))
+            glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(globalViewMatrix))
             glSingle.bufferData(glSingle.ARRAY_BUFFER, new Float32Array(listVerticesSingle), glSingle.STATIC_DRAW)
 
     let textureLocationSingle = glSingle.getUniformLocation(programSingle, "u_texture");
