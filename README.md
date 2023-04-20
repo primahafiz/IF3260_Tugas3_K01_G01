@@ -32,10 +32,10 @@ git clone https://github.com/primahafiz/IF3260_Tugas3_K01_G01
 3. Pastikan canvas berhasil ditampilkan pada halaman _web_ dan tidak ada pesan _error_.
 4. Selamat bermain!
 
-<!-- # Alternatif instalasi
+# Alternatif instalasi
 1. Buka _web browser_ anda
-2. Buka halaman ini https://noxira.github.io/IF3260-Grafkom-02/
-3. Selamat bermain! -->
+2. Buka halaman ini https://primahafiz.github.io/IF3260_Tugas3_K01_G01
+3. Selamat bermain!
 
 # _Authors_
 - Nomor Kelompok: 01 
