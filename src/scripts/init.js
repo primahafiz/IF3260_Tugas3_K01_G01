@@ -32,6 +32,8 @@ var shadderSourceSingle;
 
 
 var shading = true;
+var globalProjectionMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
+var globalViewMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
 
 
 //Initialize the WebGL

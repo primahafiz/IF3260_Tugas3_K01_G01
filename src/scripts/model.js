@@ -473,16 +473,11 @@ const steveModel = {
     },
 }
 
-const kepalaHeight = 0.3;
-const kepalaWeight = 0.3;
-const kepalaDepth = 0.7
 const badanKeretaHeight = 0.2;
 const badanKeretaWeight = 0.7;
 const badanKeretaDepth = 0.9;
 const rodaKotakHeight = 0.1;
 const rodaKotakWeight = 0.3;
-const ekorHeight = 0.2;
-const ekorWeight = 0.8;
 
 const keretaModel = {
     "body": {
@@ -581,4 +576,133 @@ const keretaModel = {
         ],
         "color": [82 / 255, 84 / 255, 84 / 255]
     }
+}
+
+const bY = 0.15
+const bX = 0.15
+const bZ = 0.1
+
+const hZ = 0.15
+const hX = 0.15
+const hY = 0.3
+
+const lY = 0.7
+const lX = 0.1
+const lZ = 0.05
+const lSpace = lX / 3
+
+const endermanModel = {
+    "head": {
+        "vertices": [
+            -hX, bY + hY, -hZ, hX, bY + hY, -hZ, hX, bY + hY, hZ, -hX, bY + hY, hZ,
+            hX, bY, -hZ, -hX, bY, -hZ, -hX, bY, hZ, hX, bY, hZ,
+            -hX, bY, hZ, -hX, bY, -hZ, -hX, bY + hY, -hZ, -hX, bY + hY, hZ,
+            hX, bY, -hZ, hX, bY, hZ, hX, bY + hY, hZ, hX, bY + hY, -hZ,
+            -hX, bY, -hZ, hX, bY, -hZ, hX, bY + hY, -hZ, -hX, bY + hY, -hZ,
+            hX, bY, hZ, -hX, bY, hZ, -hX, bY + hY, hZ, hX, bY + hY, hZ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [255 / 255, 255 / 255, 0 / 255]
+    },
+    "body": {
+        "vertices": [
+            -bX, bY, -bZ, bX, bY, -bZ, bX, bY, bZ, -bX, bY, bZ,
+            bX, -bY, -bZ, -bX, -bY, -bZ, -bX, -bY, bZ, bX, -bY, bZ,
+            -bX, -bY, bZ, -bX, -bY, -bZ, -bX, bY, -bZ, -bX, bY, bZ,
+            bX, -bY, -bZ, bX, -bY, bZ, bX, bY, bZ, bX, bY, -bZ,
+            -bX, -bY, -bZ, bX, -bY, -bZ, bX, bY, -bZ, -bX, bY, -bZ,
+            bX, -bY, bZ, -bX, -bY, bZ, -bX, bY, bZ, bX, bY, bZ
+        ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [0 / 255, 255 / 255, 255 / 255]
+    },
+    "leftArm": {
+        "vertices": [
+            -bX - lX, bY, -lZ, -bX, bY, -lZ, -bX, bY, lZ, -bX - lX, bY, lZ,
+            -bX, bY - lY, -lZ, -bX - lX, bY - lY, -lZ, -bX - lX, bY - lY, lZ, -bX, bY - lY, lZ,
+            -bX - lX, bY - lY, lZ, -bX - lX, bY - lY, -lZ, -bX - lX, bY, -lZ, -bX - lX, bY, lZ,
+            -bX, bY - lY, -lZ, -bX, bY - lY, lZ, -bX, bY, lZ, -bX, bY, -lZ,
+            -bX - lX, bY - lY, -lZ, -bX, bY - lY, -lZ, -bX, bY, -lZ, -bX - lX, bY, -lZ,
+            -bX, bY - lY, lZ, -bX - lX, bY - lY, lZ, -bX - lX, bY, lZ, -bX, bY, lZ
+        ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [255 / 255, 165 / 255, 0 / 255]
+    },
+    "rightArm": {
+        "vertices": [
+            bX, bY, -lZ, bX + lX, bY, -lZ, bX + lX, bY, lZ, bX, bY, lZ,
+            bX + lX, bY - lY, -lZ, bX, bY - lY, -lZ, bX, bY - lY, lZ, bX + lX, bY - lY, lZ,
+            bX, bY - lY, lZ, bX, bY - lY, -lZ, bX, bY, -lZ, bX, bY, lZ,
+            bX + lX, bY - lY, -lZ, bX + lX, bY - lY, lZ, bX + lX, bY, lZ, bX + lX, bY, -lZ,
+            bX, bY - lY, -lZ, bX + lX, bY - lY, -lZ, bX + lX, bY, -lZ, bX, bY, -lZ,
+            bX + lX, bY - lY, lZ, bX, bY - lY, lZ, bX, bY, lZ, bX + lX, bY, lZ
+        ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [255 / 255, 165 / 255, 0 / 255]
+    },
+    "leftLeg": {
+        "vertices": [
+            -bX + lSpace + lX, -bY, -lZ, -bX + lSpace, -bY, -lZ, -bX + lSpace, -bY, lZ, -bX + lSpace + lX, -bY, lZ,
+            -bX + lSpace, -bY - lY, -lZ, -bX + lSpace + lX, -bY - lY, -lZ, -bX + lSpace + lX, -bY - lY, lZ, -bX + lSpace, -bY - lY, lZ,
+            -bX + lSpace + lX, -bY - lY, lZ, -bX + lSpace + lX, -bY - lY, -lZ, -bX + lSpace + lX, -bY, -lZ, -bX + lSpace + lX, -bY, lZ,
+            -bX + lSpace, -bY - lY, -lZ, -bX + lSpace, -bY - lY, lZ, -bX + lSpace, -bY, lZ, -bX + lSpace, -bY, -lZ,
+            -bX + lSpace + lX, -bY - lY, -lZ, -bX + lSpace, -bY - lY, -lZ, -bX + lSpace, -bY, -lZ, -bX + lSpace + lX, -bY, -lZ,
+            -bX + lSpace, -bY - lY, lZ, -bX + lSpace + lX, -bY - lY, lZ, -bX + lSpace + lX, -bY, lZ, -bX + lSpace, -bY, lZ
+        ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [255 / 255, 165 / 255, 0 / 255]
+    },
+    "rightLeg": {
+        "vertices": [
+            bX - lSpace, -bY, -lZ, bX - lSpace - lX, -bY, -lZ, bX - lSpace - lX, -bY, lZ, bX - lSpace, -bY, lZ,
+            bX - lSpace - lX, -bY - lY, -lZ, bX - lSpace, -bY - lY, -lZ, bX - lSpace, -bY - lY, lZ, bX - lSpace - lX, -bY - lY, lZ,
+            bX - lSpace, -bY - lY, lZ, bX - lSpace, -bY - lY, -lZ, bX - lSpace, -bY, -lZ, bX - lSpace, -bY, lZ,
+            bX - lSpace - lX, -bY - lY, -lZ, bX - lSpace - lX, -bY - lY, lZ, bX - lSpace - lX, -bY, lZ, bX - lSpace - lX, -bY, -lZ,
+            bX - lSpace, -bY - lY, -lZ, bX - lSpace - lX, -bY - lY, -lZ, bX - lSpace - lX, -bY, -lZ, bX - lSpace, -bY, -lZ,
+            bX - lSpace - lX, -bY - lY, lZ, bX - lSpace, -bY - lY, lZ, bX - lSpace, -bY, lZ, bX - lSpace - lX, -bY, lZ
+        ],
+        "normal": [
+            0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0,
+            0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0,
+            -1, 0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0,
+            1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0,
+            0, 0, -1, 0, 0, -1, 0, 0, -1, 0, 0, -1,
+            0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1
+        ],
+        "color": [255 / 255, 165 / 255, 0 / 255]
+    },
 }

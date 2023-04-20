@@ -2,6 +2,7 @@ var aduduShapeId;
 var testShapeId2;
 var steveShapeId;
 var keretaShapeId;
+var endermanShapeId;
 var modelIds = {};
 
 function initAduduShape() {
@@ -116,9 +117,35 @@ function initkeretaShape() {
     shapes[backRightwheelShape.id] = backRightwheelShape
 }
 
+function initEndermanShape() {
+    let bodyShape = new Shape(endermanModel['body']['vertices'], endermanModel['body']['normal'], endermanModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    let headShape = new Shape(endermanModel['head']['vertices'], endermanModel['head']['normal'], endermanModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+    let leftArmShape = new Shape(endermanModel['leftArm']['vertices'], endermanModel['leftArm']['normal'], endermanModel['leftArm']['color'], gl.TRIANGLE_FAN, 'leftArm')
+    let rightArmShape = new Shape(endermanModel['rightArm']['vertices'], endermanModel['rightArm']['normal'], endermanModel['rightArm']['color'], gl.TRIANGLE_FAN, 'rightArm')
+    let leftLegShape = new Shape(endermanModel['leftLeg']['vertices'], endermanModel['leftLeg']['normal'], endermanModel['leftLeg']['color'], gl.TRIANGLE_FAN, 'leftLeg')
+    let rightLegShape = new Shape(endermanModel['rightLeg']['vertices'], endermanModel['rightLeg']['normal'], endermanModel['rightLeg']['color'], gl.TRIANGLE_FAN, 'rightLeg')
+
+    endermanShapeId = bodyShape.id
+    modelIds['enderman'] = endermanShapeId
+
+    bodyShape.addChild(headShape)
+    bodyShape.addChild(leftArmShape)
+    bodyShape.addChild(rightArmShape)
+    bodyShape.addChild(leftLegShape)
+    bodyShape.addChild(rightLegShape)
+
+    shapes[bodyShape.id] = bodyShape
+    shapes[headShape.id] = headShape
+    shapes[leftArmShape.id] = leftArmShape
+    shapes[rightArmShape.id] = rightArmShape
+    shapes[leftLegShape.id] = leftLegShape
+    shapes[rightLegShape.id] = rightLegShape
+}
+
 function initModels() {
     initAduduShape()
     initPigShape()
     initSteveShape()
+    initEndermanShape()
     initkeretaShape()
 }

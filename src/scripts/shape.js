@@ -95,7 +95,7 @@ class Shape {
         this.toInheritTransformationMatrix = this.getToInheritTransformationMatrix(this.parentMatrix)
         gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(this.projection_matrix));
         gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(this.transformationMatrix));
-        gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(viewMatrix))
+        gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(globalViewMatrix))
         for (let i = 0; i < vertices.length; i += 12) {
             let verticesToDraw = []
             for (let j = 0; j < 12; j += 3) {
