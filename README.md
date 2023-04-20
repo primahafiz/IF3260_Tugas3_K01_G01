@@ -8,9 +8,11 @@ Aplikasi yang dibuat merupakan aplikasi 3D WebGL Articulated Object berbasis web
 - Pemodelan 5 buah objek _articulated_ yang berbeda
 - Penyimpanan dan pemuatan konfigurasi objek dari sebuah _file_
 - Pengubahan jenis proyeksi CAD
-- Translasi, rotasi, dan penskalaan objek
+- Translasi, rotasi, dan penskalaan objek, entah objek singular atau secara keseluruhan
 - Pengubahan _view_ dari kamera
 - Mode _shading_
+- Mode _mapping_
+- Kontrol komponen
 - Pemainan Animasi model
 
 # Prasyarat
