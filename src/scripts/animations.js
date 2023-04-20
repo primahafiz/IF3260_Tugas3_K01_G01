@@ -665,8 +665,8 @@ const aduduWalkAnim = {
     "frames": [
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -687,8 +687,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -709,8 +709,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -731,8 +731,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -753,8 +753,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -762,7 +762,7 @@ const aduduWalkAnim = {
             },
             {
                 "index_diff": 4,
-                "as_root_rot": [-20, 0,-20]
+                "as_root_rot": [-20, 0, -20]
             },
             {
                 "index_diff": 8,
@@ -770,13 +770,13 @@ const aduduWalkAnim = {
             },
             {
                 "index_diff": 6,
-                "as_root_rot": [-20, 0,-20]
+                "as_root_rot": [-20, 0, -20]
             }
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -797,8 +797,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -820,8 +820,8 @@ const aduduWalkAnim = {
         [
 
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -842,8 +842,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -864,8 +864,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -886,8 +886,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -908,8 +908,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -930,8 +930,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 2,
@@ -952,8 +952,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -974,8 +974,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -996,8 +996,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1018,8 +1018,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1040,8 +1040,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1049,7 +1049,7 @@ const aduduWalkAnim = {
             },
             {
                 "index_diff": 2,
-                "as_root_rot": [-20, 0,-20]
+                "as_root_rot": [-20, 0, -20]
             },
             {
                 "index_diff": 6,
@@ -1057,13 +1057,13 @@ const aduduWalkAnim = {
             },
             {
                 "index_diff": 8,
-                "as_root_rot": [-20, 0,-20]
+                "as_root_rot": [-20, 0, -20]
             }
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1084,8 +1084,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1107,8 +1107,8 @@ const aduduWalkAnim = {
         [
 
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1129,8 +1129,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1151,8 +1151,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1173,8 +1173,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1195,8 +1195,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,30,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 30, 0]
             },
             {
                 "index_diff": 4,
@@ -1217,8 +1217,8 @@ const aduduWalkAnim = {
         ],
         [
             {
-                "index_diff" : 0,
-                "as_root_rot" : [0,0,0]
+                "index_diff": 0,
+                "as_root_rot": [0, 0, 0]
             },
             {
                 "index_diff": 4,
@@ -1241,7 +1241,296 @@ const aduduWalkAnim = {
 }
 
 const tayoWalkAnim = {
-
+    "model_id": "tayo",
+    "second_between_frames": 0.2,
+    "frames": [
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-45, 0, 0],
+                "obj_pos": [0, 0.03, 0.03],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [45, 0, 0],
+                "obj_pos": [0, 0.03, -0.03],
+            }
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-30, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [30, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.01, 0.01],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.01, -0.01],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [-15, 0, 0],
+                "obj_pos": [0, 0.02, 0.02],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [15, 0, 0],
+                "obj_pos": [0, 0.02, -0.02],
+            },
+        ],
+        [
+            {
+                "index_diff": 1,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 2,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 4,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            },
+            {
+                "index_diff": 3,
+                "obj_rot": [0, 0, 0],
+                "obj_pos": [0, 0, 0],
+            }
+        ],
+    ]
 }
 
 const endermanWalkAnim = {
