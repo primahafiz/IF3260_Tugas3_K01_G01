@@ -202,34 +202,34 @@ function initBumpAll() {
         gl.FALSE,
         9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYZRGBN1N2N3)
         3 * Float32Array.BYTES_PER_ELEMENT      //Color start from the fourth element
-        );
+    );
         
-        // Create normal attribute
-        normalAttribLocation = gl.getAttribLocation(program, "a_normal");
-        gl.vertexAttribPointer(
-            normalAttribLocation,
-            3,                                      //3 float per vertex (N1N2N3)
-            gl.FLOAT,
-            gl.FALSE,
-            9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
-            6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
-            );
+    // Create normal attribute
+    normalAttribLocation = gl.getAttribLocation(program, "a_normal");
+    gl.vertexAttribPointer(
+        normalAttribLocation,
+        3,                                      //3 float per vertex (N1N2N3)
+        gl.FLOAT,
+        gl.FALSE,
+        9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
+        6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
+    );
+        
+    projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
+    viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
+    
+    //Enable the attribute
+    gl.enableVertexAttribArray(positionAttribLocation);
+    gl.enableVertexAttribArray(colorAttribLocation);
+    gl.enableVertexAttribArray(normalAttribLocation);
+    
+    if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
+        var info = gl.getProgramInfoLog(program);
+        throw new Error('Could not compile WebGL program. \n\n' + info);
+    }  
             
-            projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
-            viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
-            
-            //Enable the attribute
-            gl.enableVertexAttribArray(positionAttribLocation);
-            gl.enableVertexAttribArray(colorAttribLocation);
-            gl.enableVertexAttribArray(normalAttribLocation);
-            
-            if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
-                var info = gl.getProgramInfoLog(program);
-                throw new Error('Could not compile WebGL program. \n\n' + info);
-            }  
-            
-            //Start the program
+    //Start the program
     gl.useProgram(program);
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -341,7 +341,7 @@ function initBumpSingle() {
     //Bind the buffer
     // gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     glSingle.bindBuffer(glSingle.ARRAY_BUFFER, vertexBufferSingle);
-        positionAttribLocationSingle = glSingle.getAttribLocation(programSingle, "vertPosition");
+    positionAttribLocationSingle = glSingle.getAttribLocation(programSingle, "vertPosition");
     glSingle.vertexAttribPointer(
         positionAttribLocationSingle,
         3,                                      //3 float per vertex (XYZ)
@@ -360,32 +360,32 @@ function initBumpSingle() {
         glSingle.FALSE,
         9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYZRGBN1N2N3)
         3 * Float32Array.BYTES_PER_ELEMENT      //Color start from the fourth element
-        );
+    );
         
-        // Create normal attribute
-        normalAttribLocationSingle = glSingle.getAttribLocation(programSingle, "a_normal");
-        glSingle.vertexAttribPointer(
-            normalAttribLocationSingle,
-            3,                                      //3 float per vertex (N1N2N3)
-            glSingle.FLOAT,
-            glSingle.FALSE,
-            9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
-            6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
-            );
-            
-            projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
-            viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
-            
-            //Enable the attribute
-            glSingle.enableVertexAttribArray(positionAttribLocationSingle);
-            glSingle.enableVertexAttribArray(colorAttribLocationSingle);
-            glSingle.enableVertexAttribArray(normalAttribLocationSingle);
-            
-            if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
-                var infoSingle = glSingle.getProgramInfoLog(programSingle);
-                throw new Error('Could not compile WebGL program. \n\n' + infoSingle);
-            }  
+    // Create normal attribute
+    normalAttribLocationSingle = glSingle.getAttribLocation(programSingle, "a_normal");
+    glSingle.vertexAttribPointer(
+        normalAttribLocationSingle,
+        3,                                      //3 float per vertex (N1N2N3)
+        glSingle.FLOAT,
+        glSingle.FALSE,
+        9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
+        6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
+    );
+    
+    projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
+    viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
+    
+    //Enable the attribute
+    glSingle.enableVertexAttribArray(positionAttribLocationSingle);
+    glSingle.enableVertexAttribArray(colorAttribLocationSingle);
+    glSingle.enableVertexAttribArray(normalAttribLocationSingle);
+    
+    if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
+        var infoSingle = glSingle.getProgramInfoLog(programSingle);
+        throw new Error('Could not compile WebGL program. \n\n' + infoSingle);
+    }  
             
     //Start the program
     glSingle.useProgram(programSingle);

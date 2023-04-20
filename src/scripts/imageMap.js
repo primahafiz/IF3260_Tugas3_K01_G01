@@ -2,7 +2,6 @@ var listVertices = [];
 var listVerticesSingle = [];
 
 var baseImageTextureCoord = [
-    // // top rung front
     32 / 63,  20 / 63,
     32 / 63,  32 / 63,
     40 / 63,  32 / 63,
@@ -54,18 +53,6 @@ function setTexcoords(glContext) {
   requestCORSIfNotSameOrigin(image, url);
   console.log(url)
   image.src = url;
-  image.addEventListener('load', function() {
-      // Now that the image has loaded make copy it to the texture.
-      console.log("LOADED")
-      let texture = gl.createTexture();
-      gl.bindTexture(gl.TEXTURE_2D, texture);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA,gl.UNSIGNED_BYTE, image);
-      gl.generateMipmap(gl.TEXTURE_2D);
-      for (let i = 0; i < Math.floor(listVertices.length/36); i ++) {
-          gl.drawArrays(gl.TRIANGLE_FAN, i*4, 4)
-      }
-      
-  });
   
 
 //Initialize the WebGL
@@ -140,7 +127,7 @@ function initImageAll() {
     //Bind the buffer
     // gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
-        positionAttribLocation = gl.getAttribLocation(program, "vertPosition");
+    positionAttribLocation = gl.getAttribLocation(program, "vertPosition");
     gl.vertexAttribPointer(
         positionAttribLocation,
         3,                                      //3 float per vertex (XYZ)
@@ -161,47 +148,47 @@ function initImageAll() {
         3 * Float32Array.BYTES_PER_ELEMENT      //Color start from the fourth element
         );
         
-        // Create normal attribute
-        normalAttribLocation = gl.getAttribLocation(program, "a_normal");
-        gl.vertexAttribPointer(
-            normalAttribLocation,
-            3,                                      //3 float per vertex (N1N2N3)
-            gl.FLOAT,
-            gl.FALSE,
-            9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
-            6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
-            );
+    // Create normal attribute
+    normalAttribLocation = gl.getAttribLocation(program, "a_normal");
+    gl.vertexAttribPointer(
+        normalAttribLocation,
+        3,                                      //3 float per vertex (N1N2N3)
+        gl.FLOAT,
+        gl.FALSE,
+        9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
+        6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
+    );
+        
+    projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
+    viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
+    
+    //Enable the attribute
+    gl.enableVertexAttribArray(positionAttribLocation);
+    gl.enableVertexAttribArray(colorAttribLocation);
+    gl.enableVertexAttribArray(normalAttribLocation);
+    
+    if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
+        var info = gl.getProgramInfoLog(program);
+        throw new Error('Could not compile WebGL program. \n\n' + info);
+    }
+    
+    projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
+    viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
+    
+    //Enable the attribute
+    gl.enableVertexAttribArray(positionAttribLocation);
+    gl.enableVertexAttribArray(colorAttribLocation);
+    gl.enableVertexAttribArray(normalAttribLocation);
+    
+    if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
+        var info = gl.getProgramInfoLog(program);
+        throw new Error('Could not compile WebGL program. \n\n' + info);
+    }
+        
             
-            projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
-            viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
-            
-            //Enable the attribute
-            gl.enableVertexAttribArray(positionAttribLocation);
-            gl.enableVertexAttribArray(colorAttribLocation);
-            gl.enableVertexAttribArray(normalAttribLocation);
-            
-            if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
-                var info = gl.getProgramInfoLog(program);
-                throw new Error('Could not compile WebGL program. \n\n' + info);
-            }
-            
-            projectionMatrixLocation = gl.getUniformLocation(program,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocation = gl.getUniformLocation(program,"modelMatrix")
-            viewMatrixLocation = gl.getUniformLocation(program,"viewMatrix")
-            
-            //Enable the attribute
-            gl.enableVertexAttribArray(positionAttribLocation);
-            gl.enableVertexAttribArray(colorAttribLocation);
-            gl.enableVertexAttribArray(normalAttribLocation);
-            
-            if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
-                var info = gl.getProgramInfoLog(program);
-                throw new Error('Could not compile WebGL program. \n\n' + info);
-            }
-            
-            
-            //Start the program
+    //Start the program
     gl.useProgram(program);
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -223,10 +210,6 @@ function initImageAll() {
 
     // Create a texture.
     let texture = gl.createTexture();
-    gl.bindTexture(gl.TEXTURE_2D, texture);
-    // Fill the texture with a 1x1 blue pixel.
-    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE,
-                    new Uint8Array([0, 0, 0, 255]));
     gl.bindTexture(gl.TEXTURE_2D, texture);
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA,gl.UNSIGNED_BYTE, image);
     gl.generateMipmap(gl.TEXTURE_2D);
@@ -265,7 +248,7 @@ function initImageSingle() {
     //Set the Canvas
     glSingle.viewport( 0, 0, canvasSingle.width, canvasSingle.height );
     glSingle.clearColor( 1.0, 1.0, 1.0, 1.0 );
-    glSingle.enable(gl.DEPTH_TEST);
+    glSingle.enable(glSingle.DEPTH_TEST);
     // Clear the canvas AND the depth buffer.
     glSingle.clear(glSingle.COLOR_BUFFER_BIT | glSingle.DEPTH_BUFFER_BIT);
 
@@ -325,7 +308,7 @@ function initImageSingle() {
     //Bind the buffer
     // gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
     glSingle.bindBuffer(glSingle.ARRAY_BUFFER, vertexBufferSingle);
-        positionAttribLocationSingle = glSingle.getAttribLocation(programSingle, "vertPosition");
+    positionAttribLocationSingle = glSingle.getAttribLocation(programSingle, "vertPosition");
     glSingle.vertexAttribPointer(
         positionAttribLocationSingle,
         3,                                      //3 float per vertex (XYZ)
@@ -344,49 +327,49 @@ function initImageSingle() {
         glSingle.FALSE,
         9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYZRGBN1N2N3)
         3 * Float32Array.BYTES_PER_ELEMENT      //Color start from the fourth element
-        );
+    );
         
-        // Create normal attribute
-        normalAttribLocationSingle = glSingle.getAttribLocation(programSingle, "a_normal");
-        glSingle.vertexAttribPointer(
-            normalAttribLocationSingle,
-            3,                                      //3 float per vertex (N1N2N3)
-            glSingle.FLOAT,
-            glSingle.FALSE,
-            9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
-            6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
-            );
-            
-            projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
-            viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
-            
-            //Enable the attribute
-            glSingle.enableVertexAttribArray(positionAttribLocationSingle);
-            glSingle.enableVertexAttribArray(colorAttribLocationSingle);
-            glSingle.enableVertexAttribArray(normalAttribLocationSingle);
+    // Create normal attribute
+    normalAttribLocationSingle = glSingle.getAttribLocation(programSingle, "a_normal");
+    glSingle.vertexAttribPointer(
+        normalAttribLocationSingle,
+        3,                                      //3 float per vertex (N1N2N3)
+        glSingle.FLOAT,
+        glSingle.FALSE,
+        9 * Float32Array.BYTES_PER_ELEMENT,     //1 vertex = 9 float (XYRGBN1N2N3)
+        6 * Float32Array.BYTES_PER_ELEMENT      //Normals start from the fourth element
+        );
+    
+    projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
+    viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
+    
+    //Enable the attribute
+    glSingle.enableVertexAttribArray(positionAttribLocationSingle);
+    glSingle.enableVertexAttribArray(colorAttribLocationSingle);
+    glSingle.enableVertexAttribArray(normalAttribLocationSingle);
 
-            if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
-                var info = glSingle.getProgramInfoLog(programSingle);
-                throw new Error('Could not compile WebGL program. \n\n' + info);
-            }
+    if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
+        var info = glSingle.getProgramInfoLog(programSingle);
+        throw new Error('Could not compile WebGL program. \n\n' + info);
+    }
+    
+    projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
+    modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
+    viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
+    
+    //Enable the attribute
+    glSingle.enableVertexAttribArray(positionAttribLocationSingle);
+    glSingle.enableVertexAttribArray(colorAttribLocationSingle);
+    glSingle.enableVertexAttribArray(normalAttribLocationSingle);
+    
+    if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
+        var infoSingle = glSingle.getProgramInfoLog(programSingle);
+        throw new Error('Could not compile WebGL program. \n\n' + info);
+    }
+    
             
-            projectionMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"projectionMatrix") // <-- WATCH THIS
-            modelMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"modelMatrix")
-            viewMatrixLocationSingle = glSingle.getUniformLocation(programSingle,"viewMatrix")
-            
-            //Enable the attribute
-            glSingle.enableVertexAttribArray(positionAttribLocationSingle);
-            glSingle.enableVertexAttribArray(colorAttribLocationSingle);
-            glSingle.enableVertexAttribArray(normalAttribLocationSingle);
-            
-            if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
-                var infoSingle = glSingle.getProgramInfoLog(programSingle);
-                throw new Error('Could not compile WebGL program. \n\n' + info);
-            }
-            
-            
-            //Start the program
+    //Start the program
     glSingle.useProgram(programSingle);
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -406,10 +389,6 @@ function initImageSingle() {
     // Create a texture.
     let texture = glSingle.createTexture();
     glSingle.bindTexture(glSingle.TEXTURE_2D, texture);
-    // Fill the texture with a 1x1 blue pixel.
-    glSingle.texImage2D(glSingle.TEXTURE_2D, 0, glSingle.RGBA, 1, 1, 0, glSingle.RGBA, glSingle.UNSIGNED_BYTE,
-                    new Uint8Array([0, 0, 0, 255]));
-    glSingle.bindTexture(glSingle.TEXTURE_2D, texture);
     glSingle.texImage2D(glSingle.TEXTURE_2D, 0, glSingle.RGBA, glSingle.RGBA,glSingle.UNSIGNED_BYTE, image);
     glSingle.generateMipmap(glSingle.TEXTURE_2D);
     for (let i = 0; i < Math.floor(listVerticesSingle.length/36); i ++) {
@@ -420,14 +399,14 @@ function initImageSingle() {
     glSingle.enableVertexAttribArray(texcoordLocationSingle);
     
     // bind the texcoord buffer.
-    glSingle.bindBuffer(gl.ARRAY_BUFFER, texcoordBufferSingle);
+    glSingle.bindBuffer(glSingle.ARRAY_BUFFER, texcoordBufferSingle);
     
     // Tell the shader to use texture unit 0 for u_texture
     glSingle.uniform1i(textureLocationSingle, 0);
     
     // Tell the texcoord attribute how to get data out of texcoordBuffer (ARRAY_BUFFER)
     let size = 2;          // 2 components per iteration
-    let type = gl.FLOAT;   // the data is 32bit floats
+    let type = glSingle.FLOAT;   // the data is 32bit floats
     let normalize = false; // don't normalize the data
     let stride = 0;        // 0 = move forward size * sizeof(type) each iteration to get the next position
     let offset = 0;        // start at the beginning of the buffer
@@ -435,3 +414,6 @@ function initImageSingle() {
         texcoordLocationSingle, size, type, normalize, stride, offset);
         
 }
+
+initImageAll()
+initImageSingle()
