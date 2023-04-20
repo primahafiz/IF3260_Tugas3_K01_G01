@@ -6,7 +6,7 @@ const animations = {
     "tayo_walk": tayoWalkAnim
 }
 
-var animationChosen = "pig_walk";
+var animationChosen = "adudu_walk";
 
 function playAnimation(animationName, currentFrame = 0) {
     // if animationName does not exist in animations, return
