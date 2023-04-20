@@ -1,7 +1,7 @@
 var aduduShapeId;
 var testShapeId2;
 var steveShapeId;
-var keretaShapeId;
+var tayoShapeId;
 var endermanShapeId;
 var modelIds = {};
 
@@ -89,14 +89,14 @@ function initSteveShape() {
     shapes[footRightShape.id] = footRightShape
 }
 
-function initkeretaShape() {
-    let bodyShape = new Shape(keretaModel['body']['vertices'], keretaModel['body']['normal'], keretaModel['body']['color'], gl.TRIANGLE_FAN, 'body')
-    // let headShape = new Shape(keretaModel['head']['vertices'], keretaModel['head']['normal'], keretaModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+function inittayoShape() {
+    let bodyShape = new Shape(tayoModel['body']['vertices'], tayoModel['body']['normal'], tayoModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    // let headShape = new Shape(tayoModel['head']['vertices'], tayoModel['head']['normal'], tayoModel['head']['color'], gl.TRIANGLE_FAN, 'head')
     // let snotShape = new Shape(pigModel['snot']['vertices'], pigModel['snot']['normal'], pigModel['snot']['color'], gl.TRIANGLE_FAN, 'snot')
-    let frontLeftwheelShape = new Shape(keretaModel['front_left_wheel']['vertices'], keretaModel['front_left_wheel']['normal'], keretaModel['front_left_wheel']['color'], gl.TRIANGLE_FAN, 'front_left_wheel')
-    let frontRightwheelShape = new Shape(keretaModel['front_right_wheel']['vertices'], keretaModel['front_right_wheel']['normal'], keretaModel['front_right_wheel']['color'], gl.TRIANGLE_FAN, 'front_right_wheel')
-    let backLeftwheelShape = new Shape(keretaModel['back_left_wheel']['vertices'], keretaModel['back_left_wheel']['normal'], keretaModel['back_left_wheel']['color'], gl.TRIANGLE_FAN, 'back_left_wheel')
-    let backRightwheelShape = new Shape(keretaModel['back_right_wheel']['vertices'], keretaModel['back_right_wheel']['normal'], keretaModel['back_right_wheel']['color'], gl.TRIANGLE_FAN, 'back_right_wheel')
+    let frontLeftwheelShape = new Shape(tayoModel['front_left_wheel']['vertices'], tayoModel['front_left_wheel']['normal'], tayoModel['front_left_wheel']['color'], gl.TRIANGLE_FAN, 'front_left_wheel')
+    let frontRightwheelShape = new Shape(tayoModel['front_right_wheel']['vertices'], tayoModel['front_right_wheel']['normal'], tayoModel['front_right_wheel']['color'], gl.TRIANGLE_FAN, 'front_right_wheel')
+    let backLeftwheelShape = new Shape(tayoModel['back_left_wheel']['vertices'], tayoModel['back_left_wheel']['normal'], tayoModel['back_left_wheel']['color'], gl.TRIANGLE_FAN, 'back_left_wheel')
+    let backRightwheelShape = new Shape(tayoModel['back_right_wheel']['vertices'], tayoModel['back_right_wheel']['normal'], tayoModel['back_right_wheel']['color'], gl.TRIANGLE_FAN, 'back_right_wheel')
 
     // bodyShape.addChild(headShape)
     bodyShape.addChild(frontLeftwheelShape)
@@ -105,8 +105,8 @@ function initkeretaShape() {
     bodyShape.addChild(backRightwheelShape)
     // headShape.addChild(snotShape)
 
-    keretaShapeId = bodyShape.id
-    modelIds['kereta'] = keretaShapeId
+    tayoShapeId = bodyShape.id
+    modelIds['tayo'] = tayoShapeId
 
     shapes[bodyShape.id] = bodyShape
     // shapes[headShape.id] = headShape
@@ -147,5 +147,5 @@ function initModels() {
     initPigShape()
     initSteveShape()
     initEndermanShape()
-    initkeretaShape()
+    inittayoShape()
 }

@@ -3,7 +3,7 @@ const animations = {
     "pig_walk": pigWalkAnim,
     "steve_walk": steveWalkAnim,
     "adudu_walk": aduduWalkAnim,
-    "kereta_walk": keretaWalkAnim
+    "tayo_walk": tayoWalkAnim
 }
 
 var animationChosen = "pig_walk";

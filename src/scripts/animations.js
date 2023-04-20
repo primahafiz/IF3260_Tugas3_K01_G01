@@ -952,6 +952,6 @@ const aduduWalkAnim = {
     ]
 }
 
-const keretaWalkAnim = {
+const tayoWalkAnim = {
 
 }
