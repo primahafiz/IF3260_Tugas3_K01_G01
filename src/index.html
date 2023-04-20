@@ -22,6 +22,7 @@
                     <option value="adudu" selected>Adudu</option>
                     <option value="pig">Pig</option>
                     <option value="steve">Steve</option>
+                    <option value="kereta">kereta</option>
                 </select>
             </div>
             <div style="margin-top: 10px;">
@@ -37,51 +38,60 @@
             <b>Set object angle</b>
             <div>
                 <label>Angle X</label>
-                <input type="range" name="sliderRotationX" id="sliderRotationX" min="-180" max="180" value="0" oninput="updateRotation('x',this.value)">
+                <input type="range" name="sliderRotationX" id="sliderRotationX" min="-180" max="180" value="0"
+                    oninput="updateRotation('x',this.value)">
                 <output id="outputRotationX"></output>
             </div>
             <div>
                 <label>Angle Y</label>
-                <input type="range" name="sliderRotationY" id="sliderRotationY" min="-180" max="180" value="0" oninput="updateRotation('y',this.value)">
+                <input type="range" name="sliderRotationY" id="sliderRotationY" min="-180" max="180" value="0"
+                    oninput="updateRotation('y',this.value)">
                 <output id="outputRotationY"></output>
             </div>
             <div>
                 <label>Angle Z</label>
-                <input type="range" name="sliderRotationZ" id="sliderRotationZ" min="-180" max="180" value="0" oninput="updateRotation('z',this.value)">
+                <input type="range" name="sliderRotationZ" id="sliderRotationZ" min="-180" max="180" value="0"
+                    oninput="updateRotation('z',this.value)">
                 <output id="outputRotationZ"></output>
             </div>
             </br>
             <b>Translation</b>
             <div>
                 <label>X</label>
-                <input type="range" name="sliderTranslationX" id="sliderTranslationX" min="-100" max="100" value="0" oninput="updateTranslation('x',this.value)">
+                <input type="range" name="sliderTranslationX" id="sliderTranslationX" min="-100" max="100" value="0"
+                    oninput="updateTranslation('x',this.value)">
                 <output id="outputTranslationX"></output>
             </div>
             <div>
                 <label>Y</label>
-                <input type="range" name="sliderTranslationY" id="sliderTranslationY" min="-100" max="100" value="0" oninput="updateTranslation('y',this.value)">
+                <input type="range" name="sliderTranslationY" id="sliderTranslationY" min="-100" max="100" value="0"
+                    oninput="updateTranslation('y',this.value)">
                 <output id="outputTranslationY"></output>
             </div>
             <div>
                 <label>Z</label>
-                <input type="range" name="sliderTranslationZ" id="sliderTranslationZ" min="-100" max="100" value="0" oninput="updateTranslation('z',this.value)">
+                <input type="range" name="sliderTranslationZ" id="sliderTranslationZ" min="-100" max="100" value="0"
+                    oninput="updateTranslation('z',this.value)">
                 <output id="outputTranslationZ"></output>
             </div>
             </br>
             <b>Scaling</b>
             <div>
                 <label>Sx</label>
-                <input type="range" name="sliderScalingX" id="sliderScalingX" min="0" max="1000" value="500" oninput="updateScaling('x',this.value)">
+                <input type="range" name="sliderScalingX" id="sliderScalingX" min="0" max="1000" value="500"
+                    oninput="updateScaling('x',this.value)">
                 <output id="outputSx"></output>
             </div>
             <div>
                 <label>Sy</label>
-                <input type="range" name="sliderScalingY" id="sliderScalingY" min="0" max="1000" value="500" oninput="updateScaling('y',this.value)">
+                <input type="range" name="sliderScalingY" id="sliderScalingY" min="0" max="1000" value="500"
+                    oninput="updateScaling('y',this.value)">
                 <output id="outputSy"></output>
             </div>
             <div>
                 <label>Sz</label>
-                <input type="range" name="sliderScalingZ" id="sliderScalingZ" min="0" max="1000" value="500" oninput="updateScaling('z',this.value)">
+                <input type="range" name="sliderScalingZ" id="sliderScalingZ" min="0" max="1000" value="500"
+                    oninput="updateScaling('z',this.value)">
                 <output id="outputSz"></output>
             </div>
             </br>
@@ -107,8 +117,8 @@
             <div>
                 <select id="projection_selector" name="projection_selector" onchange="updateProjectionChosen()">
                     <option value="0" selected>Orthogonal</option>
-                    <option value="1" >Oblique</option>
-                    <option value="2" >Perspective</option>
+                    <option value="1">Oblique</option>
+                    <option value="2">Perspective</option>
                 </select>
             </div>
             </br>
@@ -118,6 +128,7 @@
                     <option value="adudu_walk" selected>Adudu Walk</option>
                     <option value="pig_walk" selected>Pig Walk</option>
                     <option value="steve_walk" selected>Steve Walk</option>
+                    <option value="kereta_walk" selected>kereta Walk</option>
                 </select>
                 <button id="playAnimBtn" onclick="playAnimation(animationChosen)">Play</button>
             </div>
@@ -142,7 +153,7 @@
             </div>
         </div>
         <div class="toolbar right-div">
-            <div id="hierarchy" ></div>
+            <div id="hierarchy"></div>
             </br>
             <!--
                     mungkin nanti ada di sisi kanan jg, gtw
@@ -151,51 +162,60 @@
             <b>Set object angle (Single)</b>
             <div>
                 <label>Angle X</label>
-                <input type="range" name="sliderRotationXSingle" id="sliderRotationXSingle" min="-180" max="180" value="0" oninput="updateRotationSingle('x',this.value)">
+                <input type="range" name="sliderRotationXSingle" id="sliderRotationXSingle" min="-180" max="180"
+                    value="0" oninput="updateRotationSingle('x',this.value)">
                 <output id="outputRotationXSingle"></output>
             </div>
             <div>
                 <label>Angle Y</label>
-                <input type="range" name="sliderRotationYSingle" id="sliderRotationYSingle" min="-180" max="180" value="0" oninput="updateRotationSingle('y',this.value)">
+                <input type="range" name="sliderRotationYSingle" id="sliderRotationYSingle" min="-180" max="180"
+                    value="0" oninput="updateRotationSingle('y',this.value)">
                 <output id="outputRotationYSingle"></output>
             </div>
             <div>
                 <label>Angle Z</label>
-                <input type="range" name="sliderRotationZSingle" id="sliderRotationZSingle" min="-180" max="180" value="0" oninput="updateRotationSingle('z',this.value)">
+                <input type="range" name="sliderRotationZSingle" id="sliderRotationZSingle" min="-180" max="180"
+                    value="0" oninput="updateRotationSingle('z',this.value)">
                 <output id="outputRotationZSingle"></output>
             </div>
             </br>
             <b>Translation (Single)</b>
             <div>
                 <label>X</label>
-                <input type="range" name="sliderTranslationXSingle" id="sliderTranslationXSingle" min="-100" max="100" value="0" oninput="updateTranslationSingle('x',this.value)">
+                <input type="range" name="sliderTranslationXSingle" id="sliderTranslationXSingle" min="-100" max="100"
+                    value="0" oninput="updateTranslationSingle('x',this.value)">
                 <output id="outputTranslationXSingle"></output>
             </div>
             <div>
                 <label>Y</label>
-                <input type="range" name="sliderTranslationYSingle" id="sliderTranslationYSingle" min="-100" max="100" value="0" oninput="updateTranslationSingle('y',this.value)">
+                <input type="range" name="sliderTranslationYSingle" id="sliderTranslationYSingle" min="-100" max="100"
+                    value="0" oninput="updateTranslationSingle('y',this.value)">
                 <output id="outputTranslationYSingle"></output>
             </div>
             <div>
                 <label>Z</label>
-                <input type="range" name="sliderTranslationZSingle" id="sliderTranslationZSingle" min="-100" max="100" value="0" oninput="updateTranslationSingle('z',this.value)">
+                <input type="range" name="sliderTranslationZSingle" id="sliderTranslationZSingle" min="-100" max="100"
+                    value="0" oninput="updateTranslationSingle('z',this.value)">
                 <output id="outputTranslationZSingle"></output>
             </div>
             </br>
             <b>Scaling (Single)</b>
             <div>
                 <label>Sx</label>
-                <input type="range" name="sliderScalingXSingle" id="sliderScalingXSingle" min="0" max="1000" value="500" oninput="updateScalingSingle('x',this.value)">
+                <input type="range" name="sliderScalingXSingle" id="sliderScalingXSingle" min="0" max="1000" value="500"
+                    oninput="updateScalingSingle('x',this.value)">
                 <output id="outputSx"></output>
             </div>
             <div>
                 <label>Sy</label>
-                <input type="range" name="sliderScalingYSingle" id="sliderScalingYSingle" min="0" max="1000" value="500" oninput="updateScalingSingle('y',this.value)">
+                <input type="range" name="sliderScalingYSingle" id="sliderScalingYSingle" min="0" max="1000" value="500"
+                    oninput="updateScalingSingle('y',this.value)">
                 <output id="outputSySingle"></output>
             </div>
             <div>
                 <label>Sz</label>
-                <input type="range" name="sliderScalingZSingle" id="sliderScalingZSingle" min="0" max="1000" value="500" oninput="updateScalingSingle('z',this.value)">
+                <input type="range" name="sliderScalingZSingle" id="sliderScalingZSingle" min="0" max="1000" value="500"
+                    oninput="updateScalingSingle('z',this.value)">
                 <output id="outputSzSingle"></output>
             </div>
         </div>

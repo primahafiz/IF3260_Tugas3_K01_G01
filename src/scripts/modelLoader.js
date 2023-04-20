@@ -1,17 +1,18 @@
 var aduduShapeId;
 var testShapeId2;
 var steveShapeId;
+var keretaShapeId;
 var modelIds = {};
 
-function initAduduShape(){
-    let bodyShape = new Shape(aduduModel['body']['vertices'],aduduModel['body']['normal'],aduduModel['body']['color'],gl.TRIANGLE_FAN,'body')
-    let headShape = new Shape(aduduModel['head']['vertices'],aduduModel['head']['normal'],aduduModel['head']['color'],gl.TRIANGLE_FAN,'head')
-    let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'],aduduModel['torsoLeft']['normal'],aduduModel['torsoLeft']['color'],gl.TRIANGLE_FAN,'torsoLeft')
-    let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'],aduduModel['torsoRight']['normal'],aduduModel['torsoRight']['color'],gl.TRIANGLE_FAN,'torsoRight')
-    let footLeftShape = new Shape(aduduModel['footLeft']['vertices'],aduduModel['footLeft']['normal'],aduduModel['footLeft']['color'],gl.TRIANGLE_FAN,'footLeft')
-    let footRightShape = new Shape(aduduModel['footRight']['vertices'],aduduModel['footRight']['normal'],aduduModel['footRight']['color'],gl.TRIANGLE_FAN,'footRight')
-    let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'],aduduModel['antennaLeft']['normal'],aduduModel['antennaLeft']['color'],gl.TRIANGLE_FAN,'antennaLeft')
-    let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'],aduduModel['antennaRight']['normal'],aduduModel['antennaRight']['color'],gl.TRIANGLE_FAN,'antennaRight')
+function initAduduShape() {
+    let bodyShape = new Shape(aduduModel['body']['vertices'], aduduModel['body']['normal'], aduduModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    let headShape = new Shape(aduduModel['head']['vertices'], aduduModel['head']['normal'], aduduModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+    let torsoLeftShape = new Shape(aduduModel['torsoLeft']['vertices'], aduduModel['torsoLeft']['normal'], aduduModel['torsoLeft']['color'], gl.TRIANGLE_FAN, 'torsoLeft')
+    let torsoRightShape = new Shape(aduduModel['torsoRight']['vertices'], aduduModel['torsoRight']['normal'], aduduModel['torsoRight']['color'], gl.TRIANGLE_FAN, 'torsoRight')
+    let footLeftShape = new Shape(aduduModel['footLeft']['vertices'], aduduModel['footLeft']['normal'], aduduModel['footLeft']['color'], gl.TRIANGLE_FAN, 'footLeft')
+    let footRightShape = new Shape(aduduModel['footRight']['vertices'], aduduModel['footRight']['normal'], aduduModel['footRight']['color'], gl.TRIANGLE_FAN, 'footRight')
+    let antennaLeftShape = new Shape(aduduModel['antennaLeft']['vertices'], aduduModel['antennaLeft']['normal'], aduduModel['antennaLeft']['color'], gl.TRIANGLE_FAN, 'antennaLeft')
+    let antennaRightShape = new Shape(aduduModel['antennaRight']['vertices'], aduduModel['antennaRight']['normal'], aduduModel['antennaRight']['color'], gl.TRIANGLE_FAN, 'antennaRight')
 
     aduduShapeId = bodyShape.id
     modelIds['adudu'] = aduduShapeId
@@ -34,14 +35,14 @@ function initAduduShape(){
     shapes[antennaRightShape.id] = antennaRightShape
 }
 
-function initPigShape(){
-    let bodyShape = new Shape(pigModel['body']['vertices'],pigModel['body']['normal'],pigModel['body']['color'],gl.TRIANGLE_FAN,'body')
-    let headShape = new Shape(pigModel['head']['vertices'],pigModel['head']['normal'],pigModel['head']['color'],gl.TRIANGLE_FAN,'head')
-    let snotShape = new Shape(pigModel['snot']['vertices'],pigModel['snot']['normal'],pigModel['snot']['color'],gl.TRIANGLE_FAN,'snot')
-    let frontLeftFootShape = new Shape(pigModel['front_left_foot']['vertices'],pigModel['front_left_foot']['normal'],pigModel['front_left_foot']['color'],gl.TRIANGLE_FAN,'front_left_foot')
-    let frontRightFootShape = new Shape(pigModel['front_right_foot']['vertices'],pigModel['front_right_foot']['normal'],pigModel['front_right_foot']['color'],gl.TRIANGLE_FAN,'front_right_foot')
-    let backLeftFootShape = new Shape(pigModel['back_left_foot']['vertices'],pigModel['back_left_foot']['normal'],pigModel['back_left_foot']['color'],gl.TRIANGLE_FAN,'back_left_foot')
-    let backRightFootShape = new Shape(pigModel['back_right_foot']['vertices'],pigModel['back_right_foot']['normal'],pigModel['back_right_foot']['color'],gl.TRIANGLE_FAN,'back_right_foot')
+function initPigShape() {
+    let bodyShape = new Shape(pigModel['body']['vertices'], pigModel['body']['normal'], pigModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    let headShape = new Shape(pigModel['head']['vertices'], pigModel['head']['normal'], pigModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+    let snotShape = new Shape(pigModel['snot']['vertices'], pigModel['snot']['normal'], pigModel['snot']['color'], gl.TRIANGLE_FAN, 'snot')
+    let frontLeftFootShape = new Shape(pigModel['front_left_foot']['vertices'], pigModel['front_left_foot']['normal'], pigModel['front_left_foot']['color'], gl.TRIANGLE_FAN, 'front_left_foot')
+    let frontRightFootShape = new Shape(pigModel['front_right_foot']['vertices'], pigModel['front_right_foot']['normal'], pigModel['front_right_foot']['color'], gl.TRIANGLE_FAN, 'front_right_foot')
+    let backLeftFootShape = new Shape(pigModel['back_left_foot']['vertices'], pigModel['back_left_foot']['normal'], pigModel['back_left_foot']['color'], gl.TRIANGLE_FAN, 'back_left_foot')
+    let backRightFootShape = new Shape(pigModel['back_right_foot']['vertices'], pigModel['back_right_foot']['normal'], pigModel['back_right_foot']['color'], gl.TRIANGLE_FAN, 'back_right_foot')
 
     bodyShape.addChild(headShape)
     bodyShape.addChild(frontLeftFootShape)
@@ -63,12 +64,12 @@ function initPigShape(){
 }
 
 function initSteveShape() {
-    let bodyShape = new Shape(steveModel['body']['vertices'],steveModel['body']['normal'],steveModel['body']['color'],gl.TRIANGLE_FAN,'body')
-    let headShape = new Shape(steveModel['head']['vertices'],steveModel['head']['normal'],steveModel['head']['color'],gl.TRIANGLE_FAN,'head')
-    let torsoLeftShape = new Shape(steveModel['torsoLeft']['vertices'],steveModel['torsoLeft']['normal'],steveModel['torsoLeft']['color'],gl.TRIANGLE_FAN,'torsoLeft')
-    let torsoRightShape = new Shape(steveModel['torsoRight']['vertices'],steveModel['torsoRight']['normal'],steveModel['torsoRight']['color'],gl.TRIANGLE_FAN,'torsoRight')
-    let footLeftShape = new Shape(steveModel['footLeft']['vertices'],steveModel['footLeft']['normal'],steveModel['footLeft']['color'],gl.TRIANGLE_FAN,'footLeft')
-    let footRightShape = new Shape(steveModel['footRight']['vertices'],steveModel['footRight']['normal'],steveModel['footRight']['color'],gl.TRIANGLE_FAN,'footRight')
+    let bodyShape = new Shape(steveModel['body']['vertices'], steveModel['body']['normal'], steveModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    let headShape = new Shape(steveModel['head']['vertices'], steveModel['head']['normal'], steveModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+    let torsoLeftShape = new Shape(steveModel['torsoLeft']['vertices'], steveModel['torsoLeft']['normal'], steveModel['torsoLeft']['color'], gl.TRIANGLE_FAN, 'torsoLeft')
+    let torsoRightShape = new Shape(steveModel['torsoRight']['vertices'], steveModel['torsoRight']['normal'], steveModel['torsoRight']['color'], gl.TRIANGLE_FAN, 'torsoRight')
+    let footLeftShape = new Shape(steveModel['footLeft']['vertices'], steveModel['footLeft']['normal'], steveModel['footLeft']['color'], gl.TRIANGLE_FAN, 'footLeft')
+    let footRightShape = new Shape(steveModel['footRight']['vertices'], steveModel['footRight']['normal'], steveModel['footRight']['color'], gl.TRIANGLE_FAN, 'footRight')
 
     steveShapeId = bodyShape.id
     modelIds['steve'] = steveShapeId
@@ -87,8 +88,37 @@ function initSteveShape() {
     shapes[footRightShape.id] = footRightShape
 }
 
-function initModels(){
+function initkeretaShape() {
+    let bodyShape = new Shape(keretaModel['body']['vertices'], keretaModel['body']['normal'], keretaModel['body']['color'], gl.TRIANGLE_FAN, 'body')
+    // let headShape = new Shape(keretaModel['head']['vertices'], keretaModel['head']['normal'], keretaModel['head']['color'], gl.TRIANGLE_FAN, 'head')
+    // let snotShape = new Shape(pigModel['snot']['vertices'], pigModel['snot']['normal'], pigModel['snot']['color'], gl.TRIANGLE_FAN, 'snot')
+    let frontLeftwheelShape = new Shape(keretaModel['front_left_wheel']['vertices'], keretaModel['front_left_wheel']['normal'], keretaModel['front_left_wheel']['color'], gl.TRIANGLE_FAN, 'front_left_wheel')
+    let frontRightwheelShape = new Shape(keretaModel['front_right_wheel']['vertices'], keretaModel['front_right_wheel']['normal'], keretaModel['front_right_wheel']['color'], gl.TRIANGLE_FAN, 'front_right_wheel')
+    let backLeftwheelShape = new Shape(keretaModel['back_left_wheel']['vertices'], keretaModel['back_left_wheel']['normal'], keretaModel['back_left_wheel']['color'], gl.TRIANGLE_FAN, 'back_left_wheel')
+    let backRightwheelShape = new Shape(keretaModel['back_right_wheel']['vertices'], keretaModel['back_right_wheel']['normal'], keretaModel['back_right_wheel']['color'], gl.TRIANGLE_FAN, 'back_right_wheel')
+
+    // bodyShape.addChild(headShape)
+    bodyShape.addChild(frontLeftwheelShape)
+    bodyShape.addChild(backLeftwheelShape)
+    bodyShape.addChild(frontRightwheelShape)
+    bodyShape.addChild(backRightwheelShape)
+    // headShape.addChild(snotShape)
+
+    keretaShapeId = bodyShape.id
+    modelIds['kereta'] = keretaShapeId
+
+    shapes[bodyShape.id] = bodyShape
+    // shapes[headShape.id] = headShape
+    // shapes[snotShape.id] = snotShape
+    shapes[frontLeftwheelShape.id] = frontLeftwheelShape
+    shapes[frontRightwheelShape.id] = frontRightwheelShape
+    shapes[backLeftwheelShape.id] = backLeftwheelShape
+    shapes[backRightwheelShape.id] = backRightwheelShape
+}
+
+function initModels() {
     initAduduShape()
     initPigShape()
     initSteveShape()
+    initkeretaShape()
 }
