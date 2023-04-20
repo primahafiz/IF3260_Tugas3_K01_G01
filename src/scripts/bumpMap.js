@@ -223,10 +223,6 @@ function initBumpAll() {
             gl.enableVertexAttribArray(positionAttribLocation);
             gl.enableVertexAttribArray(colorAttribLocation);
             gl.enableVertexAttribArray(normalAttribLocation);
-
-        //     gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(identityMatrixs));
-        // gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrixs));
-        // gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrixs))
             
             if ( !gl.getProgramParameter( program, gl.LINK_STATUS) ) {
                 var info = gl.getProgramInfoLog(program);
@@ -238,12 +234,10 @@ function initBumpAll() {
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
     gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(identityMatrix));
-        gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrix));
-        gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrix))
+    gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrix));
+    gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrix))
     gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(listVertices), gl.STATIC_DRAW)
-    // for (let i = 0; i < 6; i ++) {
-    //     gl.drawArrays(gl.TRIANGLE_FAN, i*4, 4)
-    // }
+    
 
     let texcoordLocation = gl.getAttribLocation(program, "a_texcoord");
     let textureLocation = gl.getUniformLocation(program, "u_texture");
@@ -251,8 +245,6 @@ function initBumpAll() {
     gl.bindBuffer(gl.ARRAY_BUFFER, texcoordBuffer);
     // Set Texcoords.
     setTexcoordsBump(gl);
-    
-
     
     // Turn on the texcoord attribute
     gl.enableVertexAttribArray(texcoordLocation);
@@ -389,17 +381,13 @@ function initBumpSingle() {
             glSingle.enableVertexAttribArray(positionAttribLocationSingle);
             glSingle.enableVertexAttribArray(colorAttribLocationSingle);
             glSingle.enableVertexAttribArray(normalAttribLocationSingle);
-
-        //     gl.uniformMatrix4fv(projectionMatrixLocation, false, flatten(identityMatrixs));
-        // gl.uniformMatrix4fv(modelMatrixLocation, false, flatten(identityMatrixs));
-        // gl.uniformMatrix4fv(viewMatrixLocation, false, flatten(identityMatrixs))
             
             if ( !glSingle.getProgramParameter( programSingle, glSingle.LINK_STATUS) ) {
                 var infoSingle = glSingle.getProgramInfoLog(programSingle);
                 throw new Error('Could not compile WebGL program. \n\n' + infoSingle);
             }  
             
-            //Start the program
+    //Start the program
     glSingle.useProgram(programSingle);
     
     let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
@@ -407,9 +395,7 @@ function initBumpSingle() {
         glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(identityMatrix));
         glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(identityMatrix))
     glSingle.bufferData(glSingle.ARRAY_BUFFER, new Float32Array(listVerticesSingle), glSingle.STATIC_DRAW)
-    // for (let i = 0; i < 6; i ++) {
-    //     gl.drawArrays(gl.TRIANGLE_FAN, i*4, 4)
-    // }
+    
 
     let texcoordLocationSingle = glSingle.getAttribLocation(programSingle, "a_texcoord");
     let textureLocationSingle = glSingle.getUniformLocation(programSingle, "u_texture");

@@ -226,7 +226,6 @@ function initEnvironmentAll() {
 }
 
 function initEnvironmentSingle() {
-    console.log("MASUK SINGLE")
     //Check if webgl is supported
     if (!glSingle) {
         alert("WebglSingle is not supported");
@@ -344,8 +343,8 @@ function initEnvironmentSingle() {
             
             let identityMatrix = [[1, 0, 0, 0], [0, 1, 0, 0], [0, 0, 1, 0], [0, 0, 0, 1]]
             glSingle.uniformMatrix4fv(projectionMatrixLocationSingle, false, flatten(identityMatrix));
-                glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(identityMatrix));
-                glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(identityMatrix))
+            glSingle.uniformMatrix4fv(modelMatrixLocationSingle, false, flatten(identityMatrix));
+            glSingle.uniformMatrix4fv(viewMatrixLocationSingle, false, flatten(identityMatrix))
             glSingle.bufferData(glSingle.ARRAY_BUFFER, new Float32Array(listVerticesSingle), glSingle.STATIC_DRAW)
 
     let textureLocationSingle = glSingle.getUniformLocation(programSingle, "u_texture");
