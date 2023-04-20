@@ -319,7 +319,11 @@ class Shape {
         let listVerticesToDraw = []
         for(let i=0;i<vertices.length;i+=12){
             for (let j = 0; j < 12; j += 3) {
-                listVerticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], normal[i + j], normal[i + j + 1], normal[i + j + 2]);
+                if(shading){
+                    listVerticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], normal[i + j], normal[i + j + 1], normal[i + j + 2]);
+                }else{
+                    listVerticesToDraw.push(vertices[i + j], vertices[i + j + 1], vertices[i + j + 2], this.color[0], this.color[1], this.color[2], 0, 0, -1);
+                }
             }
         }
         return listVerticesToDraw
