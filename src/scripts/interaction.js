@@ -165,6 +165,7 @@ resetBtn.addEventListener("click", function (e) {
 // save
 var saveBtn = document.getElementById("saveBtn")
 saveBtn.addEventListener("click", function (event) {
+    console.log(shapes[choosenRootShapeID]);
     let json = JSON.stringify(shapes[choosenRootShapeID]);
     let blob = new Blob([json], { type: "application/json" });
     let url = URL.createObjectURL(blob);
@@ -200,6 +201,26 @@ loadBtn.addEventListener("click", function (event) {
                 parentShape.addChild(childShape);
                 shapes[childShape.id] = childShape;
             }
+
+            childShape.curAngleX = current[0].curAngleX;
+            childShape.curAngleY = current[0].curAngleY;
+            childShape.curAngleZ = current[0].curAngleZ;
+            childShape.translateX = current[0].translateX;
+            childShape.translateY = current[0].translateY;
+            childShape.translateZ = current[0].translateZ;
+            childShape.scaleX = current[0].scaleX;
+            childShape.scaleY = current[0].scaleY;
+            childShape.scaleZ = current[0].scaleZ;
+
+            childShape.curAngleXSingle = current[0].curAngleXSingle;
+            childShape.curAngleYSingle = current[0].curAngleYSingle;
+            childShape.curAngleZSingle = current[0].curAngleZSingle;
+            childShape.translateXSingle = current[0].translateXSingle;
+            childShape.translateYSingle = current[0].translateYSingle;
+            childShape.translateZSingle= current[0].translateZSingle;
+            childShape.scaleXSingle = current[0].scaleXSingle;
+            childShape.scaleYSingle = current[0].scaleYSingle;
+            childShape.scaleZSingle = current[0].scaleZSingle;
 
             for (const child of current[0].childShape) {
                 queue.push([child, childShape]);
